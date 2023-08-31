@@ -25,8 +25,4 @@
 .router-link-exact-active {
     color: #12b488;
 }
-
-.btn {
-    @apply bg-[#12b488] text-white px-3 py-2 rounded-md text-sm text-white;
-}
 </style>
