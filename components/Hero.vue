@@ -1,0 +1,56 @@
+<script lang="ts" setup>
+import arrowRight from '~/assets/icons/arrow-right.svg'
+import bigShoeImg from '~/assets/images/DM301.png'
+
+const statistics = [
+    { value: '1k+', label: 'Brands' },
+    { value: '500+', label: 'Shops' },
+    { value: '250k+', label: 'Customers' },
+]
+
+const newTools = [
+    // 你的鞋子图片数据
+]
+
+const changeBigShoeImage = ()=>{
+
+}
+</script>
+
+<template>
+    <section class="w-full flex xl:flex-row flex-col justify-center min-h-screen gap-10 max-w-[1440px] my-0 mx-auto">
+        <div>
+            <p class="text-xl font-montserrat text-coral-red">Our Summer collections</p>
+            <h1 class="mt-10 font-palanquin text-8xl max-sm:text-[72px] max-sm:leading-[82px] font-bold">
+                <span class="xl:bg-white xl:whitespace-nowrap relative z-10 pr-10">The New Arrival</span>
+                <br>
+                <span class="text-coral-red inline-block mt-3">Nike </span> shoes
+            </h1>
+            <p class="font-montserrat text-slate-gray text-lg leading-8 mt-6 mb-14 sm:max-w-sm">Discover stylish Nike
+                arrivals, quality comfort, and innovation for your active life.</p>
+
+            <HeroButton label="Shop now" :icon="arrowRight" />
+
+            <div class="flex gap-16 mt-16 justify-star items-start w-full">
+                <div v-for="(item, index) in statistics" :key="index">
+                    <p class="text-4xl font-palanquin font-bold">{{ item.value }}</p>
+                    <p class="text-slate-gray font-montserrat leading-7">{{ item.label }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="relative flex-1 flex justify-center items-center xl:min-h-screen max-xl:py-40 bg-primary bg-hero bg-cover bg-center">
+            <img :src="bigShoeImg" alt="dm301 colletion" width="610" height="502" class="object-contain relative z-10 scale-125" />
+
+            <div class="flex sm:gap-6 gap-4 absolute -bottom-[5%] sm:left-[10%] max-sm:px-6">
+                <div v-for="(image, index) in newTools" :key="index">
+                    <ShoeCard :index="index" :imgURL="image" @changeBigShoeImage="changeBigShoeImage"
+                        :bigShoeImg="bigShoeImg" />
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+</template>

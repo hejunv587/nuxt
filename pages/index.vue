@@ -3,12 +3,11 @@
 </script>
 
 <template>
-
-    <div>
-        <h1>Home Page</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum iure, repellat facere rerum, voluptatem quas
-            totam est, labore aut voluptates autem nostrum vitae alias. Dolores itaque eligendi nam ex facilis?</p>
-    </div>
+    <main class="relative">
+        <section class="sm:pl-16 pl-8">
+            <Hero />
+        </section>
+    </main>
 </template>
 
 

@@ -1,5 +1,5 @@
 <template>
-    <header class="sm:px-16 px-8 py-8 z-10 w-full">
+    <header class="px-8 py-8 z-10 w-full">
         <nav class="container my-0 mx-auto p-4 flex justify-between items-center">
             <div>
                 <NuxtLink to="/" class="font-bold">
@@ -10,7 +10,7 @@
                 </NuxtLink>
             </div>
 
-            <ul class="flex justify-center gap-16 max-lg:hidden">
+            <ul class="flex-1 flex justify-center gap-12 max-lg:hidden">
                 <li v-for="(item, index) in menuList" :key="index">
                     <NuxtLink :to="item.path" class="font-montserrat leading-normal text-lg text-slate-gray">{{ item.name }}
                     </NuxtLink>
