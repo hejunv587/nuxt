@@ -4,7 +4,7 @@
 
 <template>
     <main class="relative">
-        <section class="sm:pl-16 pl-8">
+        <section class="sm:pl-16 pl-8 top-0">
             <Hero />
         </section>
     </main>

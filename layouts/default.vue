@@ -1,5 +1,5 @@
 <template>
-    <header class="px-8 py-8 z-10 w-full">
+    <header class="px-8 py-8 z-10 w-full absolute">
         <nav class="container my-0 mx-auto p-4 flex justify-between items-center">
             <div>
                 <NuxtLink to="/" class="font-bold">
@@ -34,7 +34,7 @@
         </nav>
     </header>
 
-    <div class="container mx-auto p-4">
+    <div class="container mx-auto">
         <slot />
     </div>
 </template>
