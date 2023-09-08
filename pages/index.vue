@@ -7,6 +7,12 @@
         <section class="sm:pl-16 pl-8 top-0">
             <Hero />
         </section>
+        <section class='sm:px-16 px-8 sm:py-24 py-12 mt-16'>
+            <OurStory />
+        </section>
+        <section class='sm:px-16 px-8 sm:py-24 py-8'>
+            <OurQualification />
+        </section>
     </main>
 </template>
 
@@ -19,5 +25,6 @@
 
 .p {
     margin: 20px 0;
-}</style>
+}
+</style>
 

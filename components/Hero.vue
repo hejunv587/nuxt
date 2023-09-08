@@ -1,6 +1,10 @@
 <script lang="ts" setup>
 import arrowRight from '~/assets/icons/arrow-right.svg'
-import bigShoeImg from '~/assets/images/DM301.png'
+import bigImg1 from '~/assets/images/DM301.png'
+import bigImg2 from '~/assets/images/CT500.png'
+import bigImg3 from '~/assets/images/AS502.png'
+
+let bigImg = ref(bigImg1)
 
 const statistics = [
     { value: '1k+', label: 'Brands' },
@@ -9,11 +13,22 @@ const statistics = [
 ]
 
 const newTools = [
-    // 你的鞋子图片数据
+    {
+        thumbnail: bigImg1,
+        bigImage: bigImg1,
+    },
+    {
+        thumbnail: bigImg2,
+        bigImage: bigImg2,
+    },
+    {
+        thumbnail: bigImg3,
+        bigImage: bigImg3,
+    }
 ]
 
-const changeBigShoeImage = () => {
-
+const setBigImage = (img: string) => {
+    bigImg.value = img
 }
 </script>
 
@@ -39,14 +54,14 @@ const changeBigShoeImage = () => {
             </div>
         </div>
 
-        <div class="relative flex-1 flex justify-center items-center xl:min-h-screen max-xl:py-40 bg-primary bg-hero bg-cover bg-center">
-            <img :src="bigShoeImg" alt="dm301 colletion" width="610" height="502"
+        <div
+            class="relative flex-1 flex justify-center items-center xl:min-h-screen max-xl:py-40 bg-primary bg-hero bg-cover bg-center">
+            <img :src="bigImg" alt="dm301 colletion" width="610" height="502"
                 class="object-contain relative z-10 scale-125" />
 
             <div class="flex sm:gap-6 gap-4 absolute -bottom-[5%] sm:left-[10%] max-sm:px-6">
                 <div v-for="(image, index) in newTools" :key="index">
-                    <ShoeCard :index="index" :imgURL="image" @changeBigShoeImage="changeBigShoeImage"
-                        :bigShoeImg="bigShoeImg" />
+                    <HeroCard :index="index" :imgURL="image" :changeBigImage="setBigImage" :bigImg="bigImg" />
                 </div>
             </div>
         </div>

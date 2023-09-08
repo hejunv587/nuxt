@@ -21,5 +21,4 @@ useHead({
 })
 
 const { data: products } = await useFetch('https://fakestoreapi.com/products')
-console.log(products)
 </script>

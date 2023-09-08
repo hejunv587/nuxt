@@ -8,7 +8,6 @@ if (!product.value) {
     throw createError({ statusCode: 404, statusMessage: 'Product not found' })
 }
 
-console.log(product)
 
 definePageMeta({
     layout: "proudcts",
