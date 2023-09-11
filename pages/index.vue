@@ -16,6 +16,9 @@
         <section class='sm:px-16 px-8 sm:py-24 py-8'>
             <PopularProdcts />
         </section>
+        <section class='sm:px-16 px-8 sm:py-24 py-8'>
+            <LatestNews />
+        </section>
     </main>
 </template>
 

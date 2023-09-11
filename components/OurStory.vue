@@ -6,7 +6,7 @@
         我们的
         <span class="text-coral-red">故事</span>
       </h2>
-      <div class="mt-2 lg:max-w-lg font-montserrat text-slate-gray text-lg leading-7">
+      <div class="mt-2 lg:max-w-2xl font-montserrat text-slate-gray text-lg leading-7">
         <p class="mt-4 mb-2">AUTOOL偶然科技创立于2014年的中国深圳，灵感源自于一群热爱汽车的伙伴，他们在汽车维修领域沉淀了二十余年,梦想为汽车维修保养提供更为简单高效的解决方案。</p>
 
         <p class="mb-2">

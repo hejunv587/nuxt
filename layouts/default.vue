@@ -37,6 +37,8 @@
     <div class="container mx-auto">
         <slot />
     </div>
+
+    <Footer class="mt-16" />
 </template>
 
 <script lang="ts" setup>
