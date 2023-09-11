@@ -40,9 +40,9 @@
                 <div class="flex flex-1 justify-start items-center gap-2 font-montserrat cursor-pointer">
                     <!-- <img src="@/assets/icons/copyrightSign.svg" alt="copyright sign" width="20" height="20"
                         class="rounded-full m-0" /> -->
-                    <p>Copyright. All rights reserved.</p>
+                    <p>©2012-2023偶然科技Autool 版权所有</p>
                 </div>
-                <p class="font-montserrat cursor-pointer">Terms & Conditions</p>
+                <p class="font-montserrat cursor-pointer">粤ICP备20053092号</p>
             </div>
         </div>
     </footer>
@@ -97,21 +97,18 @@ const footerLinks = [
         ],
     },
     {
-        title: "Help",
-        links: [
-            { name: "About us", link: "/" },
-            { name: "FAQs", link: "/" },
-            { name: "How it works", link: "/" },
-            { name: "Privacy policy", link: "/" },
-            { name: "Payment policy", link: "/" },
-        ],
-    },
-    {
         title: "关于Autool",
         links: [
-            { name: "customer@nike.com", link: "mailto:customer@nike.com" },
-            { name: "+92554862354", link: "tel:+92554862354" },
+            { name: "关于我们", link: "/" },
+            { name: "资料下载", link: "/" },
+            { name: "配送服务", link: "/" },
+            { name: "维护及保修期", link: "/" },
+            { name: "全球销售条款", link: "/" },
+            { name: "隐私权政策", link: "/" },
+            { name: "联系我们", link: "/" },
+
         ],
-    },]
+    }
+]
 </script>
   
