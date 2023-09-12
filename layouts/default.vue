@@ -1,5 +1,5 @@
 <template>
-    <header class="px-8 py-8 z-10 w-full absolute">
+    <header class="px-8 py-8 z-10 w-full" :class="$nuxt._route.name === 'index' ? 'absolute' : ''">
         <nav class="container my-0 mx-auto p-4 flex justify-between items-center">
             <div>
                 <NuxtLink to="/" class="font-bold">
@@ -68,6 +68,8 @@ const menuList = [
         path: '/contact'
     },
 ]
+
+
 </script>
 
 

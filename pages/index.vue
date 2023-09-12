@@ -1,5 +1,7 @@
 <script lang="ts" setup>
-
+    const route = useRoute()
+    const isIndex = ref(route.path === '/')
+    console.log("index page isIndex===>",isIndex)
 </script>
 
 <template>

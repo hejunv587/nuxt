@@ -3,7 +3,7 @@
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: ["@nuxtjs/tailwindcss","@nuxt/content"],
   tailwindcss: {
     cssPath: "~/assets/css/tailwind.css",
     configPath: "tailwind.config",
@@ -32,7 +32,16 @@ export default defineNuxtConfig({
       ],
     },
   },
-  runtimeConfig:{
-    currencyKey: process.env.CURRENCY_API_KEY
-  }
+  content: {
+    // // 设置 Markdown 内容目录的路径
+    // documentDriven: {
+    //   layoutFallbacks: ['default'],
+    // },
+    markdown: {
+      dir: "content",
+    },
+  },
+  runtimeConfig: {
+    currencyKey: process.env.CURRENCY_API_KEY,
+  },
 });
