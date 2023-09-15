@@ -24,7 +24,7 @@
             </ul>
 
 
-            <div class="hidden max-lg:block">
+            <div class="hidden max-lg:block" @click="toggleMenu">
                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" class="w-[25px] h-[25px]"
                     viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                     <path
@@ -32,6 +32,25 @@
                 </svg>
             </div>
         </nav>
+
+        <!-- 移动设备菜单 -->
+        
+
+        <div v-if="isMobileMenuOpen" class="absolute w-full overflow-hidden top-16 left-0">
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-screen h-screen bg-white z-20">
+                <ul class="p-4 space-y-4 z-20">
+                    <!-- 移动设备菜单项 -->
+                    <li v-for="(item, index) in menuList" :key="index" class="z-20">
+                        <NuxtLink :to="item.path" class="text-slate-gray hover:text-blue-500">{{ item.name }}</NuxtLink>
+                    </li>
+                    <!-- 子菜单项 -->
+                    <li v-if="selectedMainMenu" v-for="(subItem, subIndex) in selectedMainMenu.subMenu" :key="subIndex">
+                        <NuxtLink :to="subItem.path" class="text-slate-gray hover:text-blue-500">{{ subItem.name }}
+                        </NuxtLink>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </header>
 
     <div class="container mx-auto">
@@ -42,6 +61,12 @@
 </template>
 
 <script lang="ts" setup>
+const isMobileMenuOpen = ref(false);
+
+const toggleMenu = () => {
+    isMobileMenuOpen.value = !isMobileMenuOpen.value;
+};
+
 const menuList = [
     {
         name: '首页',

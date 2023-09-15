@@ -51,10 +51,12 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         <!-- 用 v-for 渲染每个系列 -->
         <div v-for="series in filteredSeries" :key="series.id"
-          class="border border-gray-300 rounded-md p-4 hover:border-blue-500 hover:shadow-md cursor-pointer">
-          <img :src="`${series.image}`" class="max-h-[120px] max-w-[70%] my-0 mx-auto">
-          <h3 class="text-lg font-medium">{{ series.name }}</h3>
-          <p class="text-gray-500">{{ series.description }}</p>
+          class="border border-gray-300 rounded-md hover:border-blue-500 hover:shadow-md cursor-pointer w-full mx-auto">
+          <img :src="`/images/${series.image}`" class="w-full aspect-[16/9]  object-cover rounded-t-md">
+          <div class="p-2">
+            <h3 class="text-lg font-medium">{{ series.name }}</h3>
+            <p class="text-gray-500 text-xs mt-1">{{ series.description }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -87,32 +89,38 @@ const series = [
 const seriesData = [
   {
     ename: 'pipeline leak',
+    image: 'AutomotivePipelineLeakDetection.jpg',
     name: '汽车管道泄漏检测',
     serie: '汽车维修检测系列',
     description: '汽车管道泄漏检测仪，是检查车辆管路系统密封性及查找泄漏点，帮助汽修技师快速、准确地判断故障是否由管路泄露引起的专用工具',
   },
   {
     name: '汽车电路检测',
+    image: 'AutomotiveCircuitTesting.jpg',
     serie: '汽车维修检测系列',
     description: '描述汽车电路检测的信息',
   },
   {
     name: '汽车喷油嘴检测',
+    image: 'AutomotiveFuelInjectorInspection.jpg',
     serie: '汽车维修检测系列',
     description: '描述汽车喷油嘴检测的信息',
   },
   {
     name: '汽车发动机压力检测',
+    image: 'CarEnginePressureDetection.jpg',
     serie: '汽车维修检测系列',
     description: '描述汽车发动机压力检测的信息',
   },
   {
     name: '汽车油品检测',
+    image: 'AutomotiveOilTesting.jpg',
     serie: '汽车维修检测系列',
     description: '描述汽车油品检测的信息',
   },
   {
     name: '汽车蓄电池检测',
+    image: 'CarBatteryTesting.jpg',
     serie: '汽车维修检测系列',
     description: '描述汽车蓄电池检测的信息',
   },

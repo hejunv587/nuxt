@@ -37,7 +37,7 @@ const setBigImage = (img: string) => {
         <div class="relative xl:w-2/5 flex flex-col justify-center items-start w-full max-xl:sm:px-16 max-xl:sm:px-8 pt-28">
             <!-- <p class="text-xl font-montserrat text-coral-red">Our Summer collections</p> -->
             <h1 class="mt-10 font-palanquin text-8xl max-sm:text-[72px] max-sm:leading-[82px] font-bold">
-                <span class="xl:bg-white xl:whitespace-nowrap relative z-10 pr-10">新 品 上 市</span>
+                <span class="xl:bg-white xl:whitespace-nowrap relative pr-10">新 品 上 市</span>
                 <br>
                 <span class="text-coral-red inline-block mt-3 text-6xl">Autool</span> <span class="text-6xl">Devices</span> 
             </h1>
