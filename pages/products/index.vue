@@ -126,16 +126,19 @@ const seriesData = [
   },
   {
     name: '汽车火花塞检测',
+    image: 'CarSparkPluginspection.jpg',
     serie: '汽车维修检测系列',
     description: '描述汽车火花塞检测的信息',
   },
   {
     name: '汽车密闭空间检测',
+    image: 'CarConfinedSpaceInspection.jpg',
     serie: '汽车维修检测系列',
     description: '描述汽车密闭空间检测的信息',
   },
   {
     name: '汽车底盘检测',
+    image: 'CarChassisInspection.jpg',
     serie: '汽车维修检测系列',
     description: '描述汽车底盘检测的信息',
   },

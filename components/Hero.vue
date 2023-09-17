@@ -36,8 +36,8 @@ const setBigImage = (img: string) => {
     <section class="w-full flex xl:flex-row flex-col justify-center min-h-screen gap-10 max-w-[1440px] my-0 mx-auto">
         <div class="relative xl:w-2/5 flex flex-col justify-center items-start w-full max-xl:sm:px-16 max-xl:sm:px-8 pt-28">
             <!-- <p class="text-xl font-montserrat text-coral-red">Our Summer collections</p> -->
-            <h1 class="mt-10 font-palanquin text-8xl max-sm:text-[72px] max-sm:leading-[82px] font-bold">
-                <span class="xl:bg-white xl:whitespace-nowrap relative pr-10">新 品 上 市</span>
+            <h1 class="mt-10 font-palanquin text-8xl  max-sm:text-[64px] max-sm:leading-[82px] font-bold">
+                <span class="xl:bg-white xl:whitespace-nowrap relative pr-10">新品上市</span>
                 <br>
                 <span class="text-coral-red inline-block mt-3 text-6xl">Autool</span> <span class="text-6xl">Devices</span> 
             </h1>
@@ -45,7 +45,7 @@ const setBigImage = (img: string) => {
 
             <HeroButton label="了解更多" :icon="arrowRight" />
 
-            <div class="flex gap-16 mt-16 justify-star items-start w-full">
+            <div class="flex gap-4 md:gap-16 mt-16 justify-star items-start w-full">
                 <div v-for="(item, index) in statistics" :key="index">
                     <p class="text-4xl font-palanquin font-bold">{{ item.value }}</p>
                     <p class="text-slate-gray font-montserrat leading-7">{{ item.label }}</p>
