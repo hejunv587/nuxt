@@ -56,7 +56,7 @@ const setBigImage = (img: string) => {
         <div
             class="relative flex-1 flex justify-center items-center xl:min-h-screen max-xl:py-40 bg-primary bg-hero bg-cover bg-center">
             <img :src="bigImg" alt="dm301 colletion" width="610" height="502"
-                class="object-contain relative z-10 scale-125" />
+                class="object-contain relative scale-125" />
 
             <div class="flex sm:gap-6 gap-4 absolute -bottom-[5%] sm:left-[10%] max-sm:px-6">
                 <div v-for="(image, index) in newTools" :key="index">

@@ -12,15 +12,22 @@
 
             <ul class="flex-1 flex justify-center gap-12 max-lg:hidden">
                 <li v-for="(item, index) in menuList" :key="index">
-                    <NuxtLink :to="item.path" class="font-montserrat leading-normal text-lg text-slate-gray">{{ item.name }}
-                    </NuxtLink>
+                    <!-- <div class="relative group"> -->
+                    <div class="relative" @mouseover="showSubMenu(index)" @mouseleave="delayHideSubMenu(index)">
+                        <a @click="togglePcMenu(item)"
+                            class="font-montserrat leading-normal text-lg text-slate-gray cursor-pointer hover:text-blue-500">
+                            {{ item.name }}
+                        </a>
+                        <ul v-if="activeSubMenu === index && item.subMenuList"
+                            class="absolute z-20 bg-white border rounded-lg mt-2 p-2 space-y-4 whitespace-nowrap"
+                            @mouseover="showSubMenu(index)" @mouseleave="delayHideSubMenu(index)">
+                            <li v-for="(subItem, subIndex) in item.subMenuList" :key="subIndex" class="z-20">
+                                <NuxtLink :to="subItem.path" class="block text-slate-gray hover:text-blue-500">{{
+                                    subItem.name }}</NuxtLink>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
-                <!-- <li>
-                    <NuxtLink to="/about">About</NuxtLink>
-                </li>
-                <li>
-                    <NuxtLink to="/products" class="btn">Products</NuxtLink>
-                </li> -->
             </ul>
 
 
@@ -91,6 +98,30 @@
 <script lang="ts" setup>
 const isMobileMenuOpen = ref(false);
 const isSubMenuOpen = ref(false);
+
+const activeSubMenu = ref(null);
+const delayTimer = ref(null);
+
+const showSubMenu = (index) => {
+    clearTimeout(delayTimer.value);
+    activeSubMenu.value = index;
+};
+
+const delayHideSubMenu = (index) => {
+    // 延迟关闭子菜单
+    // delayTimer.value = setTimeout(() => {
+    //     activeSubMenu.value = null;
+    // }, 1000); // 这里设置延迟时间，单位是毫秒
+};
+
+const togglePcMenu = async (e) => {
+    console.log("toggleSubMenu", e)
+    if (!e.subMenuList) {
+        await navigateTo({
+            path: e.path
+        })
+    }
+};
 
 const toggleMenuOn = () => {
     isMobileMenuOpen.value = true;
