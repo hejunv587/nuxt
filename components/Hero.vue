@@ -28,20 +28,18 @@ const newTools = [
   },
 ];
 
-const setBigImage = (img: string) => {
-  bigImg.value = img;
-};
+// const setBigImage = (img: string) => {
+//   bigImg.value = img;
+// };
 </script>
 
 <template>
-  <section>
-    <div class="relative overflow-hidden bg-gray-900">
+  <section class="relative overflow-hidden bg-gray-900">
       <img
         :src="bigImg"
         alt="Hero Image"
         class="w-full h-auto md:h-full object-cover object-center transition-transform transform scale-100 md:scale-150 duration-300"
         :class="{ 'scale-150': isWideScreen }"
       />
-    </div>
   </section>
 </template>
