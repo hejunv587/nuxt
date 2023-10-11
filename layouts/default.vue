@@ -1,5 +1,6 @@
 <template>
-    <header class="px-8 py-8 z-10 w-full" :class="$nuxt._route.name === 'index' ? 'absolute' : ''">
+    <!-- <header class="px-8 py-8 z-10 w-full" :class="$nuxt._route.name === 'index' ? 'absolute' : ''"> -->
+    <header class="px-8 z-10 w-full">
         <nav class="container my-0 mx-auto py-4 flex justify-between items-center">
             <div>
                 <NuxtLink to="/" class="font-bold">
@@ -88,7 +89,8 @@
         </div>
     </header>
 
-    <div class="container mx-auto">
+    <!-- <div class="container mx-auto"> -->
+    <div class="w-full">
         <slot />
     </div>
 

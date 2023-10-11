@@ -6,7 +6,7 @@
 
 <template>
     <main class="relative">
-        <section class="sm:px-16 px-8 top-0">
+        <section class="">
             <Hero />
         </section>
         <section class='sm:px-16 px-8 sm:py-24 py-12 mt-16'>
