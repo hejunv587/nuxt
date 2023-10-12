@@ -13,15 +13,13 @@
                 Join us
             </button>
         </div>
-        <div class="lg:w-1/2">
-            <h3>Power of Freedom—Motorcycle</h3> Power of Freedom—Motorcycle
+        <div class="py-24 px-28 bg-red-800 text-white h-full flex flex-col p-16 md:p-24 relative z-10 justify-center">
+            <h3 class="text-2xl mb-4 text-left ">Power of Freedom—Motorcycle</h3>
 
-            <p>A motorcycle is more than a means of transportation, it is a representative of the power of freedom. And a
-                good set of motorcycle repair tools can make this freedom more durable and worry-free!</p>
-
+            <p class="justify-center items-center">A motorcycle is more than a means of transportation, it is a representative of the power of freedom. And a good set of motorcycle repair tools can make this freedom more durable and worry-free!</p>
         </div>
-        <div class="lg:w-1/2">
-            <img src="joinus2" alt="">
+        <div class="">
+            <img :src="joinus2" alt="" class="block w-full">
         </div>
     </div>
 </template>

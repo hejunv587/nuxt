@@ -9,8 +9,11 @@
         <section class="">
             <Hero />
         </section>
-        <section class="mx-auto sm:px-16 px-8 sm:py-24 py-12 mt-16">
+        <section class="mx-auto mt-4 container">
             <JoinUs />
+        </section>
+        <section class="mx-auto mt-4 container">
+            <Introduce />
         </section>
         <section class='sm:px-16 px-8 sm:py-24 py-12 mt-16'>
             <OurStory />
