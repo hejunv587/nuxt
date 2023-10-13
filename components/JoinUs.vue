@@ -9,7 +9,7 @@
                 <li>Support OEM customization</li>
                 <li>Global recruiting dealer</li>
             </ul>
-            <button class="bg-red-500 text-white p-2 mt-8">
+            <button class="bg-[#8b2323] text-white p-2 mt-8">
                 Join us
             </button>
         </div>
@@ -28,27 +28,7 @@
 import joinus1 from "~/assets/images/joinus1.jpg";
 import joinus2 from "~/assets/images/joinus2.jpg";
 
-const joinUsItems = ref([
-    {
-        title: "Item 1",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        image: "image1.jpg",
-    },
-    {
-        title: "Item 2",
-        description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-        title: "Item 3",
-        description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-        image: "image3.jpg",
-    },
-    {
-        title: "Item 4",
-        description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
-        image: "image4.jpg",
-    },
-]);
+
 </script>
   
 <style scoped>
