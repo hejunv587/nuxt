@@ -94,7 +94,7 @@
         <slot />
     </div>
 
-    <Footer class="mt-16" />
+    <Footer class="" />
 </template>
 
 <script lang="ts" setup>
