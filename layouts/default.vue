@@ -5,9 +5,9 @@
             <div>
                 <NuxtLink to="/" class="font-bold">
                     <img class="m-0 w-[75px] h-[45px]"
-                        data-original-logo="https://www.cnautool.com/wp-content/uploads/2021/04/AUTOOL.png"
-                        data-alternate-logo="https://www.cnautool.com/wp-content/uploads/2021/04/AUTOOL.png"
-                        src="https://www.cnautool.com/wp-content/uploads/2021/04/AUTOOL.png" alt="AUTOOL">
+                        :data-original-logo="logo"
+                        :data-alternate-logo="logo"
+                        :src="logo" alt="Fxfine">
                 </NuxtLink>
             </div>
 
@@ -98,6 +98,7 @@
 </template>
 
 <script lang="ts" setup>
+import logo from "~/assets/images/logo.png"
 const isMobileMenuOpen = ref(false);
 const isSubMenuOpen = ref(false);
 
