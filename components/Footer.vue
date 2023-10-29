@@ -4,7 +4,7 @@
             <div class="flex justify-between items-start gap-20 flex-wrap max-lg:flex-col">
                 <div class="flex flex-col items-start">
                     <a href="/">
-                        <img src="https://www.cnautool.com/wp-content/uploads/2021/04/AUTOOL.png" alt="logo" width="150"
+                        <img :src="logo" alt="logo" width="150"
                             height="46" class="m-0" />
                     </a>
                     <p class="mt-6 text-base leading-7 font-montserrat text-[#8e857c] sm:max-w-sm">
@@ -49,53 +49,53 @@
 </template>
   
 <script setup lang="ts">
+import logo from "~/assets/images/logo.png";
+import wehcat from "~/assets/images/wechat.png";
+import douyin from "~/assets/images/douyin.png";
+
 const socialMedia = [
     {
-        src: "https://www.cnautool.com/wp-content/uploads/2022/08/官微二维码-1.jpg",
+        src: wehcat,
         alt: "公众号"
     },
     {
-        src: "https://www.cnautool.com/wp-content/uploads/2022/08/抖音二维码-1.jpg",
+        src: douyin,
         alt: "抖音"
     }
 ]
 const footerLinks = [
     {
-        title: "汽车维修检测系列",
+        title: "产品",
         links: [
-            { name: "汽车管道泄漏检测", link: "/" },
-            { name: "汽车电路检测", link: "/" },
-            { name: "汽车喷油嘴检测", link: "/" },
-            { name: "汽车发动起压力检测", link: "/" },
-            { name: "汽车油品检测", link: "/" },
-            { name: "汽车蓄电池检测", link: "/" },
-            { name: "汽车火花塞检测", link: "/" },
-            { name: "汽车密闭空间检测", link: "/" },
-            { name: "汽车底盘检测", link: "/" },
-            { name: "汽车故障检测", link: "/" },
+            { name: "摩托车行车记录仪系列", link: "/" },
+            { name: "摩托车CarPlay系列", link: "/" },
+            { name: "摩托车胎压监测系列", link: "/" },
+            { name: "摩托车坡度仪系列", link: "/" },
+            { name: "摩托车头盔系列", link: "/" },
+            { name: "摩托车蓝牙耳机系列", link: "/" },
 
         ],
     },
-    {
-        "title": "汽车维修保养系列",
-        "links": [
-            { "name": "汽车刹车油更换", "link": "/" },
-            { "name": "汽车发动机积碳清洗", "link": "/" },
-            { "name": "汽车冷媒维护保养", "link": "/" },
-            { "name": "汽车蓄电池充电", "link": "/" },
-            { "name": "汽车编程稳压", "link": "/" },
-            { "name": "汽车自动变速箱油更换", "link": "/" },
-            { "name": "汽车废油回收", "link": "/" },
-            { "name": "汽车燃油系统保养", "link": "/" },
-            { "name": "汽车冷却液更换", "link": "/" }
-        ]
-    },
-    {
-        title: "新能源汽车维修工具系列",
-        links: [
-            { name: "新能源汽车电池检测", link: "/" },
-        ],
-    },
+    // {
+    //     "title": "汽车维修保养系列",
+    //     "links": [
+    //         { "name": "汽车刹车油更换", "link": "/" },
+    //         { "name": "汽车发动机积碳清洗", "link": "/" },
+    //         { "name": "汽车冷媒维护保养", "link": "/" },
+    //         { "name": "汽车蓄电池充电", "link": "/" },
+    //         { "name": "汽车编程稳压", "link": "/" },
+    //         { "name": "汽车自动变速箱油更换", "link": "/" },
+    //         { "name": "汽车废油回收", "link": "/" },
+    //         { "name": "汽车燃油系统保养", "link": "/" },
+    //         { "name": "汽车冷却液更换", "link": "/" }
+    //     ]
+    // },
+    // {
+    //     title: "新能源汽车维修工具系列",
+    //     links: [
+    //         { name: "新能源汽车电池检测", link: "/" },
+    //     ],
+    // },
     {
         title: "关于Autool",
         links: [
