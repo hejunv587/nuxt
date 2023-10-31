@@ -4,9 +4,7 @@
         <nav class="container my-0 mx-auto py-4 flex justify-between items-center">
             <div>
                 <NuxtLink to="/" class="font-bold">
-                    <img class="m-0 w-[75px] h-[45px]"
-                        :data-original-logo="logo"
-                        :data-alternate-logo="logo"
+                    <img class="m-0 w-[150px] max-w-full" :data-original-logo="logo" :data-alternate-logo="logo"
                         :src="logo" alt="Fxfine">
                 </NuxtLink>
             </div>
@@ -170,6 +168,10 @@ const menuList = [
         path: '/about'
     },
     {
+        name: '联系我们',
+        path: '/contact'
+    },
+    {
         name: '产品',
         path: '/products'
     },
@@ -178,39 +180,40 @@ const menuList = [
         path: '/news'
     },
     {
-        name: '服务与支持',
-        path: '/service',
-        subMenuList: [
-            {
-                name: '资料下载',
-                path: '/downloads'
-            },
-            {
-                name: '配送服务',
-                path: '/delivery'
-            },
-            {
-                name: '退换货服务',
-                path: '/returns'
-            },
-            {
-                name: '维护及保修期',
-                path: '/maintenance'
-            },
-            {
-                name: '全球销售条款',
-                path: '/sales-terms'
-            },
-            {
-                name: '隐私权政策',
-                path: '/privacy-policy'
-            }
-        ]
+        name: '下载',
+        path: '/downloads'
     },
-    {
-        name: '联系我们',
-        path: '/contact'
-    },
+    // {
+    //     name: '服务与支持',
+    //     path: '/service',
+    //     subMenuList: [
+    //         {
+    //             name: '资料下载',
+    //             path: '/downloads'
+    //         },
+    //         {
+    //             name: '配送服务',
+    //             path: '/delivery'
+    //         },
+    //         {
+    //             name: '退换货服务',
+    //             path: '/returns'
+    //         },
+    //         {
+    //             name: '维护及保修期',
+    //             path: '/maintenance'
+    //         },
+    //         {
+    //             name: '全球销售条款',
+    //             path: '/sales-terms'
+    //         },
+    //         {
+    //             name: '隐私权政策',
+    //             path: '/privacy-policy'
+    //         }
+    //     ]
+    // },
+
 ]
 
 

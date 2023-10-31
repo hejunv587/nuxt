@@ -97,7 +97,7 @@ const footerLinks = [
     //     ],
     // },
     {
-        title: "关于Autool",
+        title: "关于Fxfine",
         links: [
             { name: "关于我们", link: "/" },
             { name: "资料下载", link: "/" },
