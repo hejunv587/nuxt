@@ -1,10 +1,33 @@
 <script lang="ts" setup>
-// const { data } = await useFetch('/api/test?name=tom', {
-//     method: 'post',
-//     body: { age: 30 }
-// })
+import about_us from "~/assets/images/about_us.jpg"
+import factory from "~/assets/images/factory.jpg"
+import inside_factory from "~/assets/images/inside_factory.jpg"
+import exhibition from "~/assets/images/exhibition.jpg"
+import office from "~/assets/images/office.jpg"
+import whyus from "~/assets/images/whyus.png"
 
-const { data } = await useFetch('/api/currency/CNY')
+
+const features = [
+    { name: '目标', description: '我们的目标是...' },
+    { name: '愿景', description: '我们的愿景是...' },
+    { name: '任务', description: '我们的任务是...' },
+    { name: '标语', description: '我们的标语是...' },
+];
+
+const images = [
+    { name: '工厂', src: factory },
+    { name: '工厂内部', src: inside_factory },
+    { name: '展会', src: exhibition },
+    { name: '办公室', src: office },
+]
+
+let selectedFeature = ref(features[0]);
+
+const selectFeature = (feature) => {
+    console.log(feature)
+    selectedFeature.value = feature;
+};
+
 </script>
 
 <template>
@@ -13,7 +36,7 @@ const { data } = await useFetch('/api/currency/CNY')
             <div id="about_container" class="flex flex-col flex-wrap">
                 <div class="px-4 py-5 min-h-24 block max-w-7xl w-full mx-auto">
                     <img class="w-full h-full object-cover object-center"
-                        src="https://cdn.shopify.com/s/files/1/0615/2503/3117/t/7/assets/168863862611_jpg.jpeg?v=1688638627"
+                        :src="about_us"
                         alt="Image" title="" />
 
                     <div id="introduction"
@@ -62,59 +85,39 @@ const { data } = await useFetch('/api/currency/CNY')
                         </div>
                     </div>
 
-                    <div id="features" class="bg-[#f6f6f6] mt-6 text-black p-4 flex flex-row w-full">
-                        <div id="featuretabs" class="">
-                            <div class="inline-block"
-                                style="color: rgb(0, 0, 0); font-weight: initial; background-color: rgb(255, 255, 255);">OUR
-                                PURPOSE</div>
-                            <div class="spbitem-tab-nav-item inactive"
-                                style="color: rgb(0, 0, 0); background-color: initial; font-weight: initial;">OUR VISION
-                            </div>
-                            <div class="spbitem-tab-nav-item inactive"
-                                style="color: rgb(0, 0, 0); background-color: initial;">OUR MISSION</div>
-                            <div class="spbitem-tab-nav-item inactive"
-                                style="color: rgb(0, 0, 0); background-color: initial;">OUR SLOGAN</div>
+
+                </div>
+                <div class="min-h-24 block max-w-7xl w-full mx-auto bg-[#f6f6f6] p-4 ">
+                    <div id="features" class="mt-6 text-black flex flex-row w-full">
+                        <div id="featuretabs" class="min-w-fit">
+                            <ul>
+                                <li v-for="feature in features" :key="feature.name" @click="selectFeature(feature)"
+                                    class="p-4 cursor-pointer"
+                                    :class="{ 'bg-white': selectedFeature.name === feature.name }">
+                                    {{ feature.name }}
+                                </li>
+                            </ul>
                         </div>
-                        <div id="pbitm-id-4" class="spb-item   type_container spb-item-id_4 "
-                            style="display: flex; flex-flow: column wrap; direction: ltr; background-color: rgb(255, 255, 255); min-height: 100px; color: rgb(0, 0, 0); width: 100%;">
-                            <div id="pbitm-id-3" class="spb-item   type_paragraph spb-item-id_3 "
-                                style="display: flex; flex-flow: column wrap; direction: ltr; line-height: 2em; font-family: inherit; max-width: 1280px; margin-left: auto; margin-right: auto; width: 100%; box-shadow: none;">
-                                <div style="text-shadow: none;">
-                                    <p><span style="font-size: 16px;">Motorcycle testing and diagnosis expert</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="pbitm-id-6" class="spb-item   type_container spb-item-id_6 "
-                            style="display: none; flex-flow: column wrap; direction: ltr; background-color: rgb(255, 255, 255); min-height: 100px; color: rgb(0, 0, 0); width: 100%;">
-                            <div id="pbitm-id-1" class="spb-item   type_paragraph spb-item-id_1 "
-                                style="display: flex; flex-flow: column wrap; direction: ltr; line-height: 2em; font-family: inherit; max-width: 1280px; margin-left: auto; margin-right: auto; width: 100%; box-shadow: none;">
-                                <div style="text-shadow: none;">
-                                    <p><span style="font-size: 16px;">Accompanying users, we are committed to becoming the
-                                            backbone of the motorcycle aftermarket.</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="pbitm-id-62" class="spb-item   type_container spb-item-id_62 "
-                            style="display: none; flex-flow: column wrap; direction: ltr; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); width: 100%;">
-                            <div id="pbitm-id-63" class="spb-item   type_paragraph spb-item-id_63 "
-                                style="display: flex; flex-flow: column wrap; direction: ltr; width: 100%; box-shadow: none;">
-                                <div style="text-shadow: none;">
-                                    <p><span style="font-size: 16px;">With craftsmanship spirit of craft and technology to
-                                            create the outstanding charm of products. Changing lives with technology makes
-                                            it more convenient to repair motorbikes.</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="pbitm-id-65" class="spb-item   type_container spb-item-id_65 "
-                            style="display: none; flex-flow: column wrap; direction: ltr; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); width: 100%;">
-                            <div id="pbitm-id-66" class="spb-item   type_paragraph spb-item-id_66 "
-                                style="display: flex; flex-flow: column wrap; direction: ltr; width: 100%; box-shadow: none;">
-                                <div style="text-shadow: none;">
-                                    <p><span style="font-size: 16px;">Make Your Motorcycle Repair Easier.</span></p>
-                                </div>
-                            </div>
+                        <div class="p-4 bg-white w-full">
+                            <ul>
+                                <li class="mb-4" v-if="selectedFeature">
+                                    {{ selectedFeature.description }}
+                                </li>
+                            </ul>
                         </div>
                     </div>
+                    <!-- 添加图片部分 -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+                        <div v-for="image in images" :key="image.name" class="text-center">
+                            <img :src="image.src" alt="Image" class="w-full h-auto mb-2">
+                            <p>{{ image.name }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="min-h-24 block max-w-7xl w-full mx-auto">
+                    <img class="w-full h-full object-cover object-center"
+                        :src="whyus"
+                        alt="Image" title="" />
                 </div>
 
             </div>
