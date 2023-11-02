@@ -9,9 +9,9 @@ if (!product.value) {
 }
 
 
-definePageMeta({
-    layout: "proudcts",
-});
+// definePageMeta({
+//     layout: "proudcts",
+// });
 </script>
 
 <template>

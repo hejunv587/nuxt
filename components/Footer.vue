@@ -4,12 +4,11 @@
             <div class="flex justify-between items-start gap-20 flex-wrap max-lg:flex-col">
                 <div class="flex flex-col items-start">
                     <a href="/">
-                        <img :src="logo" alt="logo" width="150"
-                            height="46" class="m-0" />
+                        <img :src="logo" alt="logo" width="150" height="46" class="m-0" />
                     </a>
                     <p class="mt-6 text-base leading-7 font-montserrat text-[#8e857c] sm:max-w-sm">
-                        行车无忧，从检测开始 <br>
-                        专注于提供高质量、可靠的汽车检测设备，以确保车辆的安全性和可靠性
+                        FXFINE成立于中国深圳，多年来一直专注于全球摩托车智能与安全方案
+                        <br>
                     </p>
                     <div class="flex items-center gap-5 mt-8">
                         <div v-for="icon in socialMedia" :key="icon.alt" class="flex justify-center items-center">
@@ -21,7 +20,7 @@
                     </div>
                 </div>
 
-                <div class="flex flex-1 justify-between lg:gap-10 gap-20 flex-wrap">
+                <div class="flex flex-1 justify-between gap-10 lg:justify-end lg:space-x-40 flex-wrap">
                     <div v-for="section in footerLinks" :key="section.title">
                         <h4 class="font-montserrat text-2xl leading-normal font-medium mb-6 text-black">
                             {{ section.title }}
@@ -97,11 +96,11 @@ const footerLinks = [
     //     ],
     // },
     {
-        title: "关于Fxfine",
+        title: "关于FXFINE",
         links: [
             { name: "关于我们", link: "/" },
-            { name: "资料下载", link: "/" },
-            { name: "配送服务", link: "/" },
+            // { name: "资料下载", link: "/" },
+            // { name: "配送服务", link: "/" },
             { name: "维护及保修期", link: "/" },
             { name: "全球销售条款", link: "/" },
             { name: "隐私权政策", link: "/" },

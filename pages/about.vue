@@ -4,14 +4,18 @@ import factory from "~/assets/images/factory.jpg"
 import inside_factory from "~/assets/images/inside_factory.jpg"
 import exhibition from "~/assets/images/exhibition.jpg"
 import office from "~/assets/images/office.jpg"
-import whyus from "~/assets/images/whyus.png"
+import whyus from "~/assets/images/whyus.jpg"
 
 
 const features = [
-    { name: '目标', description: '我们的目标是...' },
-    { name: '愿景', description: '我们的愿景是...' },
-    { name: '任务', description: '我们的任务是...' },
-    { name: '标语', description: '我们的标语是...' },
+    { name: '目标', description: '成为摩托车智能与安全设备市场的中坚力量' },
+    {
+        name: '愿景', description: 'FXFINE 始终保持革命性的创新和探索精神，凭借多年的摩托车智能与安全产品的研发经验，生产出优质的摩托车智能与安全产品。我们也尊重所有忠实用户的反馈需求。如果您对产品升级有任何建议，请随时联系我们。我们希望创造出更多满足用户需求的产品！'
+    },
+    {
+        name: '任务', description: 'FXFINE 始终将客户放在第一位。我们承诺对所有产品提供三年保修。我们有严格的质量控制部门，确保每个产品在发货前都是完整且可用的。我们认真倾听客户的任何反馈，让每一位信任FXFINE的客户对我们的产品和服务有更好的感受！'
+    },
+    { name: '理念', description: 'FXFINE专注于摩托车智能与安全解决方案。秉承着创新创造价值、质量第一、用户体验第一的理念，努力为每一位摩托车爱好者提供更优质的智能产品和服务' },
 ];
 
 const images = [
@@ -35,52 +39,22 @@ const selectFeature = (feature) => {
         <section class="mx-auto container">
             <div id="about_container" class="flex flex-col flex-wrap">
                 <div class="px-4 py-5 min-h-24 block max-w-7xl w-full mx-auto">
-                    <img class="w-full h-full object-cover object-center"
-                        :src="about_us"
-                        alt="Image" title="" />
+                    <img class="w-full h-full object-cover object-center" :src="about_us" alt="Image" title="" />
 
                     <div id="introduction"
                         class="mt-6 text-white flex flex-col flex-wrap text-left leading-8 mx-auto w-full shadow-none">
                         <div style="text-shadow: none;">
-                            <p id="isPasted"><span>FXTUL was founded in 2019 in Shenzhen,
-                                    China, and has been specializing in providing high-quality motorcycle repair equipment.
-                                    We
-                                    are determined to become the backbone of the motorcycle back-end market. Our team
-                                    members
-                                    all have years of experience in car and motorcycle repair. With years of experience in
-                                    the
-                                    industry, we have established ourselves as a trusted name among motorcycle enthusiasts
-                                    and
-                                    professionals alike.&nbsp;</span></p>
-                            <p><span>Our products include automotive smoke leak
-                                    detectors,
-                                    motorcycle and automotive injector cleaners and testers, and motorcycle diagnostic
-                                    scanners.
-                                    We are also developing new repair tools, such as lifts. More competitive products will
-                                    be
-                                    launched in the future. Whether you are a professional mechanic or a DIY enthusiast, we
-                                    have
-                                    the tools and equipment you need to get the job done right.&nbsp;</span></p>
-                            <p><span>FXTUL always ensures the stability and performance
-                                    of
-                                    products and insists on continuous optimization of product technology and product
-                                    upgrades.
-                                    Ensure to enhance the applicability of the products to achieve to become a professional
-                                    and
-                                    competent assistant for motorcycle repair and maintenance.&nbsp;</span></p>
-                            <p><span>At FXTUL, we believe that customer satisfaction is
-                                    paramount, which is why we strive to provide the best possible service and support to
-                                    our
-                                    customers. We are proud that our customers are satisfied with our products and services
-                                    and
-                                    are committed to maintaining the highest standards of quality and innovation in
-                                    everything
-                                    we do.&nbsp;</span></p>
-                            <p><span>We have professional factories and support wholesale
-                                    orders such as OEM and ODM. If you are looking for reliable, high-quality equipment to
-                                    help
-                                    you with your motorcycle repair and maintenance needs, look no further than
-                                    FXTUL.</span>
+
+
+                            <p id="isPasted"><span>FXFINE
+                                    于2019年成立于中国深圳，一直专注于提供高品质的摩托车智能设备。我们立志成为摩托车智能与安全设备市场的中坚力量。我们的团队成员都有多年的汽车和摩托车智能与安全研发经验。凭借多年的行业经验，我们已成为摩托车爱好者和专业人士值得信赖的品牌。
+                                    &nbsp;</span></p>
+                            <p><span>我们的产品包括摩托车胎压监测、摩托车行车记录仪以及摩托车CarPlay。我们还在开发新的摩托车专用设备。未来还将推出更多有竞争力的产品。&nbsp;</span></p>
+                            <p><span>FXFINE 始终保证产品的稳定性和性能，坚持产品技术的持续优化和产品升级。确保增强产品的适用性，成为专业、得力的摩托车行车安全助手。 &nbsp;</span></p>
+                            <p><span>在
+                                    FXFINE，我们相信客户满意度至关重要，这就是为什么我们努力为客户提供最好的服务和支持。我们很自豪我们的客户对我们的产品和服务感到满意，并致力于在我们所做的一切中保持最高的质量和创新标准。
+                                    &nbsp;</span></p>
+                            <p><span>我们拥有专业工厂，支持OEM和ODM等批发订单。如果您正在寻找可靠、高品质的设备来帮助您满足您的行车需求，那么 FXFINE 就是您的最佳选择。</span>
                             </p>
                         </div>
                     </div>
@@ -115,9 +89,7 @@ const selectFeature = (feature) => {
                     </div>
                 </div>
                 <div class="min-h-24 block max-w-7xl w-full mx-auto">
-                    <img class="w-full h-full object-cover object-center"
-                        :src="whyus"
-                        alt="Image" title="" />
+                    <img class="w-full h-full object-cover object-center" :src="whyus" alt="Image" title="" />
                 </div>
 
             </div>
