@@ -117,7 +117,7 @@ const series = [
 
 const seriesData = [
   {
-    id: '1',
+    id: 'M3',
     ename: 'R1 motorcycle recorder',
     image: 'AutomotivePipelineLeakDetection.jpg',
     name: 'R1摩托车行车记录仪',

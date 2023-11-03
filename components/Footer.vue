@@ -1,6 +1,6 @@
 <template>
-    <footer class="bg-white sm:px-16 px-8 sm:pt-24 pt-12 pb-8">
-        <div class="mt-12 max-w-[1440px] my-0 mx-auto ">
+    <footer class="bg-white sm:px-16 px-8 sm:pt-12 pt-12 pb-8">
+        <div class="max-w-[1440px] my-0 mx-auto ">
             <div class="flex justify-between items-start gap-20 flex-wrap max-lg:flex-col">
                 <div class="flex flex-col items-start">
                     <a href="/">
