@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-[#2d2d30]">
+    <div class="bg-[#2d2d30]" ref="fullscreenContainer">
         <div class="flex flex-col md:flex-row">
             <div class="p-7 w-full md:w-1/2 md:h-screen flex flex-col">
                 <div class="max-h-[80%] h-auto">
@@ -18,7 +18,7 @@
                     </button>
                     <div class="flex-grow grid grid-cols-3 sm:grid-cols-5 gap-2">
                         <div v-for="(image, index) in visibleThumbnails" :key="index">
-                            <div class="cursor-pointer" @click="selectImage(index)"  
+                            <div class="cursor-pointer" @click="selectImage(index)"
                                 :class="{ 'border border-white': currentIndex === index }">
                                 <img :src="image.thumbnail" alt="Thumbnail" class="w-full h-auto" />
                             </div>
@@ -37,19 +37,44 @@
 
 
             </div>
-            <div class="p-7 w-full md:w-1/2 md:h-screen">
+            <div ref="scrollContainer" class="p-7 w-full md:w-1/2 md:h-screen overflow-y-auto no-scrollbar">
                 <h2 class="text-4xl my-7 text-white">{{ product.name }}</h2>
                 <!-- <p class="text-xl my-7">Price - ${{ product.price }}</p> -->
                 <h3 class="font-bold border-b-2 mb-4 pb-2 text-white">Product description:</h3>
                 <p class="mb-7 text-[#b6b4b1]">{{ product.description }}</p>
+
+                <h3 class="font-bold mb-4 pb-2 text-white">Product overview:</h3>
+                <p class="mb-7 text-[#b6b4b1]">{{ product.overview }}</p>
+
+                <h3 class="font-bold mb-4 pb-2 text-white">Product functions:</h3>
+                <div class="mb-7">
+                    <ul class="list-disc pl-5">
+                        <li v-for="(item, index) in product.functions" :key="index" class="mb-2 text-[#b6b4b1]">{{ item }}
+                        </li>
+                    </ul>
+                </div>
+
+                <h3 class="font-bold mb-4 pb-2 text-white">Product advantages:</h3>
+                <div>
+                    <ul class="list-disc pl-5">
+                        <li v-for="(item, index) in product.advantages" :key="index" class="mb-2 text-[#b6b4b1]">{{ item }}
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 </template>
   
-<script setup>
-const { product } = defineProps(['product'])
-console.log("product detail", product)
+<script setup lang="ts">
+import { Product } from '../types/product';
+
+
+// const { product } = defineProps(['product'])
+// const product: Product = defineProps(['product'])
+const {
+    product = undefined as Product | undefined
+} = defineProps(['product'])
 
 const screenWidth = ref(0)
 const currentIndex = ref(0);
@@ -66,9 +91,29 @@ const gridColumns = computed(() => {
 });
 
 // Initialize the visible thumbnails list
+// const initializeVisibleThumbnails = () => {
+//     //   const startIndex = currentPage.value * itemsPerPage;
+//     console.log("initializeVisibleThumbnails", currentIndex.value, gridColumns.value)
+//     console.log("product.images", product.images)
+//     const images = product.images.value
+//     console.log("images", images)
+//     const thumbnails = images.slice(currentIndex.value, currentIndex.value + gridColumns.value)
+//     console.log("thumbnails", thumbnails)
+//     visibleThumbnails.value = thumbnails.value.map((thumbnail) => thumbnail.value);
+//     // visibleThumbnails.value = product.images.slice(currentIndex.value, gridColumns.value);
+// };
+
 const initializeVisibleThumbnails = () => {
-    //   const startIndex = currentPage.value * itemsPerPage;
-    visibleThumbnails.value = product.images.slice(currentIndex.value, gridColumns);
+    const images = product.images;
+    const thumbnails = [];
+
+    for (let i = currentIndex.value; i < currentIndex.value + gridColumns.value; i++) {
+        if (i < images.length) {
+            thumbnails.push(images[i]);
+        }
+    }
+
+    visibleThumbnails.value = thumbnails;
 };
 
 // Update visible thumbnails when the screen width changes
@@ -81,13 +126,13 @@ const res_thb = ref()
 res_src.value = product.images[currentIndex.value].src
 res_thb.value = product.images[currentIndex.value].thumbnail
 
-const selectImage = (index) => {
+const selectImage = (index: number) => {
     currentIndex.value = index;
     res_src.value = product.images[currentIndex.value].src
 
 }
 
-const changeVisibleThumbnails = (steps) => {
+const changeVisibleThumbnails = (steps: number) => {
     //更改可见缩略图列表的起始索引
     currentIndex.value = currentIndex.value + steps;
     if (currentIndex.value <= 0) {
@@ -96,6 +141,8 @@ const changeVisibleThumbnails = (steps) => {
         currentIndex.value = product.images.length - gridColumns.value
     }
 
+    console.log("changeVisibleThumbnails", currentIndex.value, gridColumns.value)
+
     initializeVisibleThumbnails()
 }
 
@@ -103,14 +150,36 @@ const handleResize = () => {
     screenWidth.value = window.innerWidth;
 }
 
+
+const scrollContainer = ref<HTMLElement | null>(null);
+const fullscreenContainer = ref<HTMLElement | null>(null);
+
+const handlePageScroll = ()=> {
+    const scrollContainerEl = scrollContainer.value;
+    // 将整个页面的滚动位置设置为局部元素的滚动位置
+    if (scrollContainerEl) {
+        return scrollContainerEl.scroll
+    }
+}
+
 // Initialize visible thumbnails on component mount
 onMounted(() => {
+    const scrollContainerEl = scrollContainer.value;
+    const fullscreenContainerEl = fullscreenContainer.value;
+
+    console.log("scrollContainerEl", scrollContainerEl)
+
+    window.addEventListener("scroll", handlePageScroll);
+
+    gridColumns.value = 5
+    screenWidth.value = window.innerWidth
     window.addEventListener('resize', handleResize);
     initializeVisibleThumbnails();
 });
 
 onBeforeUnmount(() => {
     window.removeEventListener('resize', handleResize);
+    window.removeEventListener("scroll", handlePageScroll);
 })
 
 // Handle window resize to update visible thumbnails
