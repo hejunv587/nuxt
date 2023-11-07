@@ -61,6 +61,47 @@
                         </li>
                     </ul>
                 </div>
+
+                <h3 class="font-bold mb-4 pb-2 text-white mt-7">Technical Parameters:</h3>
+                <div>
+                    <ul class="list-disc pl-5">
+                        <li v-for="(item, index) in product.technical_parameters" :key="index" class="mb-2 text-[#b6b4b1]">
+                            {{ item }}
+                        </li>
+                    </ul>
+                </div>
+
+                <div v-for="(item, index) in product.about" :key="index" class="mt-7">
+                    <h3 class="font-bold mb-4 pb-2 text-white">About {{ item.name }}:</h3>
+                    <p class="text-[#b6b4b1]">{{ item.desc }}</p>
+                </div>
+
+                <h3 class="font-bold mb-4 pb-2 text-white mt-7">Services:</h3>
+                <div>
+                    <ul class="list-disc pl-5 mb-7">
+                        <li v-for="(item, index) in product.services" :key="index" class="mb-2 text-[#b6b4b1]">
+                            {{ item }}
+                        </li>
+                    </ul>
+                </div>
+
+                <h3 class="font-bold mb-4 pb-2 text-white mt-7">Why Choose FXFINE:</h3>
+                <div>
+                    <ul class="list-disc pl-5 mb-7">
+                        <li v-for="(item, index) in product.whychoose" :key="index" class="mb-2 text-[#b6b4b1]">
+                            {{ item }}
+                        </li>
+                    </ul>
+                </div>
+
+                <h3 class="font-bold mb-4 pb-2 text-white mt-7">Note:</h3>
+                <div>
+                    <ul class="list-disc pl-5 mb-7">
+                        <li v-for="(item, index) in product.note" :key="index" class="mb-2 text-[#b6b4b1]">
+                            {{ item }}
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -69,6 +110,9 @@
 <script setup lang="ts">
 import { Product } from '../types/product';
 
+const scrollY = ref(0);
+const lastScrollY = ref(0);
+const scrollDirection = ref('down');
 
 // const { product } = defineProps(['product'])
 // const product: Product = defineProps(['product'])
@@ -154,11 +198,57 @@ const handleResize = () => {
 const scrollContainer = ref<HTMLElement | null>(null);
 const fullscreenContainer = ref<HTMLElement | null>(null);
 
-const handlePageScroll = ()=> {
+const handlePageScroll = () => {
+    scrollY.value = window.scrollY
+    if (scrollY.value > lastScrollY.value) {
+        scrollDirection.value = 'down';
+    } else {
+        scrollDirection.value = 'up';
+    }
+    lastScrollY.value = scrollY.value;
+
+    // console.log("scrollDirection", lastScrollY.value, scrollY.value,scrollDirection.value)
+
     const scrollContainerEl = scrollContainer.value;
     // 将整个页面的滚动位置设置为局部元素的滚动位置
     if (scrollContainerEl) {
-        return scrollContainerEl.scroll
+
+        // 获取局部滚动容器的可见区域
+        const containerTop = scrollContainerEl.clientTop;
+        const containerHeight = scrollContainerEl.clientHeight;
+
+        // console.log("scrollContainerEl",scrollContainer.value?.scroll)
+
+        // console.log("handlePageScroll", window.scrollY, window.innerHeight ,scrollContainerEl.scrollTop,scrollContainerEl.scrollHeight,containerHeight)
+
+        // 判断是否滚动到局部滚动容器的底部
+        if (scrollContainerEl.scrollTop + scrollContainerEl.clientHeight < scrollContainerEl.scrollHeight) {
+        //     // 如果滚动到局部滚动容器的底部，将滚动事件传递给局部容器
+        //     scrollContainerEl.scrollTop += 10;
+        //     window.scrollTo(0,10)
+        //     lastScrollY.value = 0 
+        //     // event.preventDefault();
+        //     return false;
+            console.log("scrollContainerEl",scrollContainer.value?.scroll)
+
+            return scrollContainer.value?.sc
+        }
+
+        // if (scrollContainerEl.scrollTop + containerHeight < scrollContainerEl.scrollHeight) {
+        //     // 如果滚动到局部滚动容器的底部，将滚动事件传递给局部容器
+        //     scrollContainerEl.scrollTop += 10;
+        //     window.scrollTo(0, scrollContainerEl.scrollTop);
+        //     // 停止处理全局滚动事件
+        //     return false;
+        // }
+
+        // // 处理向上滚动
+        // if (scrollDirection.value == 'up' && scrollContainerEl.scrollTop > 0) {
+        //     scrollContainerEl.scrollTop -= 10;
+        //     window.scrollTo(0, scrollContainerEl.scrollTop);
+        //     // 停止处理全局滚动事件
+        //     return false;
+        // }
     }
 }
 

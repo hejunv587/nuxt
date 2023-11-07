@@ -1,4 +1,8 @@
 // types.ts
+export type About = {
+  name: string;
+  desc: string;
+};
 export type Product = {
     id: string;
     name: string;
@@ -13,7 +17,7 @@ export type Product = {
     functions: string[];
     advantages: string[];
     technical_parameters: string[];
-    about: string;
+    about: About[];
     services: string[];
     whychoose: string[];
     note: string[];

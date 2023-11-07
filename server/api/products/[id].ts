@@ -67,8 +67,12 @@ const products = [
       'Display: 2.8 "color screen',
       "Machine size: 16.5*8.5*2.5CM",
     ],
-    about:
-      'Connect the device to the computer and wait for the device to be recognized by the computer. After the recognition is successful, a new drive symbol will appear on the computer. Open this and replace the “DIAGNOSE" folder in the drive with the downloaded “DIAGNOSE" upgrade folder, and then power on again. The updated files can be obtained by contacting customer service or the official website.',
+    about: [
+      {
+        name:'SOFTWARE UPGRADES',
+        desc:'Connect the device to the computer and wait for the device to be recognized by the computer. After the recognition is successful, a new drive symbol will appear on the computer. Open this and replace the “DIAGNOSE" folder in the drive with the downloaded “DIAGNOSE" upgrade folder, and then power on again. The updated files can be obtained by contacting customer service or the official website.',
+      }
+    ],
     services: [
       "Free software upgrade",
       "3 years warranty",
