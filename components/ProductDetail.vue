@@ -38,69 +38,74 @@
 
             </div>
             <div ref="scrollContainer" class="p-7 w-full md:w-1/2 md:h-screen overflow-y-auto no-scrollbar">
-                <h2 class="text-4xl my-7 text-white">{{ product.name }}</h2>
-                <!-- <p class="text-xl my-7">Price - ${{ product.price }}</p> -->
-                <h3 class="font-bold border-b-2 mb-4 pb-2 text-white">Product description:</h3>
-                <p class="mb-7 text-[#b6b4b1]">{{ product.description }}</p>
+                <div ref="scrollContent">
+                    <h2 class="text-4xl my-7 text-white">{{ product.name }}</h2>
+                    <!-- <p class="text-xl my-7">Price - ${{ product.price }}</p> -->
+                    <h3 class="font-bold border-b-2 mb-4 pb-2 text-white">Product description:</h3>
+                    <p class="mb-7 text-[#b6b4b1]">{{ product.description }}</p>
 
-                <h3 class="font-bold mb-4 pb-2 text-white">Product overview:</h3>
-                <p class="mb-7 text-[#b6b4b1]">{{ product.overview }}</p>
+                    <h3 class="font-bold mb-4 pb-2 text-white">Product overview:</h3>
+                    <p class="mb-7 text-[#b6b4b1]">{{ product.overview }}</p>
 
-                <h3 class="font-bold mb-4 pb-2 text-white">Product functions:</h3>
-                <div class="mb-7">
-                    <ul class="list-disc pl-5">
-                        <li v-for="(item, index) in product.functions" :key="index" class="mb-2 text-[#b6b4b1]">{{ item }}
-                        </li>
-                    </ul>
-                </div>
+                    <h3 class="font-bold mb-4 pb-2 text-white">Product functions:</h3>
+                    <div class="mb-7">
+                        <ul class="list-disc pl-5">
+                            <li v-for="(item, index) in product.functions" :key="index" class="mb-2 text-[#b6b4b1]">{{ item
+                            }}
+                            </li>
+                        </ul>
+                    </div>
 
-                <h3 class="font-bold mb-4 pb-2 text-white">Product advantages:</h3>
-                <div>
-                    <ul class="list-disc pl-5">
-                        <li v-for="(item, index) in product.advantages" :key="index" class="mb-2 text-[#b6b4b1]">{{ item }}
-                        </li>
-                    </ul>
-                </div>
+                    <h3 class="font-bold mb-4 pb-2 text-white">Product advantages:</h3>
+                    <div>
+                        <ul class="list-disc pl-5">
+                            <li v-for="(item, index) in product.advantages" :key="index" class="mb-2 text-[#b6b4b1]">{{ item
+                            }}
+                            </li>
+                        </ul>
+                    </div>
 
-                <h3 class="font-bold mb-4 pb-2 text-white mt-7">Technical Parameters:</h3>
-                <div>
-                    <ul class="list-disc pl-5">
-                        <li v-for="(item, index) in product.technical_parameters" :key="index" class="mb-2 text-[#b6b4b1]">
-                            {{ item }}
-                        </li>
-                    </ul>
-                </div>
+                    <h3 class="font-bold mb-4 pb-2 text-white mt-7">Technical Parameters:</h3>
+                    <div>
+                        <ul class="list-disc pl-5">
+                            <li v-for="(item, index) in product.technical_parameters" :key="index"
+                                class="mb-2 text-[#b6b4b1]">
+                                {{ item }}
+                            </li>
+                        </ul>
+                    </div>
 
-                <div v-for="(item, index) in product.about" :key="index" class="mt-7">
-                    <h3 class="font-bold mb-4 pb-2 text-white">About {{ item.name }}:</h3>
-                    <p class="text-[#b6b4b1]">{{ item.desc }}</p>
-                </div>
+                    <div v-for="(item, index) in product.about" :key="index" class="mt-7">
+                        <h3 class="font-bold mb-4 pb-2 text-white">About {{ item.name }}:</h3>
+                        <p class="text-[#b6b4b1]">{{ item.desc }}</p>
+                    </div>
 
-                <h3 class="font-bold mb-4 pb-2 text-white mt-7">Services:</h3>
-                <div>
-                    <ul class="list-disc pl-5 mb-7">
-                        <li v-for="(item, index) in product.services" :key="index" class="mb-2 text-[#b6b4b1]">
-                            {{ item }}
-                        </li>
-                    </ul>
-                </div>
+                    <h3 class="font-bold mb-4 pb-2 text-white mt-7">Services:</h3>
+                    <div>
+                        <ul class="list-disc pl-5 mb-7">
+                            <li v-for="(item, index) in product.services" :key="index" class="mb-2 text-[#b6b4b1]">
+                                {{ item }}
+                            </li>
+                        </ul>
+                    </div>
 
-                <h3 class="font-bold mb-4 pb-2 text-white mt-7">Why Choose FXFINE:</h3>
-                <div>
-                    <ul class="list-disc pl-5 mb-7">
-                        <li v-for="(item, index) in product.whychoose" :key="index" class="mb-2 text-[#b6b4b1]">
-                            {{ item }}
-                        </li>
-                    </ul>
-                </div>
+                    <h3 class="font-bold mb-4 pb-2 text-white mt-7">Why Choose FXFINE:</h3>
+                    <div>
+                        <ul class="list-disc pl-5 mb-7">
+                            <li v-for="(item, index) in product.whychoose" :key="index" class="mb-2 text-[#b6b4b1]">
+                                {{ item }}
+                            </li>
+                        </ul>
+                    </div>
 
-                <h3 class="font-bold mb-4 pb-2 text-white mt-7">Note:</h3>
-                <div>
-                    <ul class="list-disc pl-5 mb-7">
-                        <li v-for="(item, index) in product.note" :key="index" class="mb-2 text-[#b6b4b1]">
-                            {{ item }}
-                        </li>
-                    </ul>
+                    <h3 class="font-bold mb-4 pb-2 text-white mt-7">Note:</h3>
+                    <div>
+                        <ul class="list-disc pl-5 mb-7">
+                            <li v-for="(item, index) in product.note" :key="index" class="mb-2 text-[#b6b4b1]">
+                                {{ item }}
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -109,6 +114,7 @@
   
 <script setup lang="ts">
 import { Product } from '../types/product';
+// import BScroll from 'better-scroll';
 
 const scrollY = ref(0);
 const lastScrollY = ref(0);
@@ -197,58 +203,71 @@ const handleResize = () => {
 
 const scrollContainer = ref<HTMLElement | null>(null);
 const fullscreenContainer = ref<HTMLElement | null>(null);
+const scrollContent = ref<HTMLElement | null>(null);
 
 const handlePageScroll = () => {
-    scrollY.value = window.scrollY
-    if (scrollY.value > lastScrollY.value) {
-        scrollDirection.value = 'down';
-    } else {
-        scrollDirection.value = 'up';
-    }
-    lastScrollY.value = scrollY.value;
+    console.log("handlePageScroll")
 
-    // console.log("scrollDirection", lastScrollY.value, scrollY.value,scrollDirection.value)
+
+    // scrollY.value = window.scrollY
+    // if (scrollY.value > lastScrollY.value) {
+    //     scrollDirection.value = 'down';
+    // } else {
+    //     scrollDirection.value = 'up';
+    // }
+    // lastScrollY.value = scrollY.value;
+
+    // // console.log("scrollDirection", lastScrollY.value, scrollY.value,scrollDirection.value)
 
     const scrollContainerEl = scrollContainer.value;
-    // 将整个页面的滚动位置设置为局部元素的滚动位置
+    // // 将整个页面的滚动位置设置为局部元素的滚动位置
     if (scrollContainerEl) {
 
         // 获取局部滚动容器的可见区域
         const containerTop = scrollContainerEl.clientTop;
         const containerHeight = scrollContainerEl.clientHeight;
 
-        // console.log("scrollContainerEl",scrollContainer.value?.scroll)
+        // const scrollContainerBs = new BScroll(scrollContainer.value, {
+        //     // Better-Scroll 配置选项
+        //     mouseWheel: true,
+        //     // wheel: true,
+        //     // scrollbar: true,
+        //     probeType: 3,
+        //     preventDefault: true,
+        // })
 
-        // console.log("handlePageScroll", window.scrollY, window.innerHeight ,scrollContainerEl.scrollTop,scrollContainerEl.scrollHeight,containerHeight)
+    //     // console.log("scrollContainerEl",scrollContainer.value?.scroll)
 
-        // 判断是否滚动到局部滚动容器的底部
-        if (scrollContainerEl.scrollTop + scrollContainerEl.clientHeight < scrollContainerEl.scrollHeight) {
-        //     // 如果滚动到局部滚动容器的底部，将滚动事件传递给局部容器
-        //     scrollContainerEl.scrollTop += 10;
-        //     window.scrollTo(0,10)
-        //     lastScrollY.value = 0 
-        //     // event.preventDefault();
-        //     return false;
-            console.log("scrollContainerEl",scrollContainer.value?.scroll)
+    //     // console.log("handlePageScroll", window.scrollY, window.innerHeight ,scrollContainerEl.scrollTop,scrollContainerEl.scrollHeight,containerHeight)
 
-            return scrollContainer.value?.sc
-        }
+    //     // 判断是否滚动到局部滚动容器的底部
+    //     if (scrollContainerEl.scrollTop + scrollContainerEl.clientHeight < scrollContainerEl.scrollHeight) {
+    //         //     // 如果滚动到局部滚动容器的底部，将滚动事件传递给局部容器
+    //         //     scrollContainerEl.scrollTop += 10;
+    //         //     window.scrollTo(0,10)
+    //         //     lastScrollY.value = 0 
+    //         //     // event.preventDefault();
+    //         //     return false;
+    //         // console.log("scrollContainerEl", scrollContainer.value?.scroll)
 
-        // if (scrollContainerEl.scrollTop + containerHeight < scrollContainerEl.scrollHeight) {
-        //     // 如果滚动到局部滚动容器的底部，将滚动事件传递给局部容器
-        //     scrollContainerEl.scrollTop += 10;
-        //     window.scrollTo(0, scrollContainerEl.scrollTop);
-        //     // 停止处理全局滚动事件
-        //     return false;
-        // }
+    //         // return scrollContainer.value?.sc
+    //     }
 
-        // // 处理向上滚动
-        // if (scrollDirection.value == 'up' && scrollContainerEl.scrollTop > 0) {
-        //     scrollContainerEl.scrollTop -= 10;
-        //     window.scrollTo(0, scrollContainerEl.scrollTop);
-        //     // 停止处理全局滚动事件
-        //     return false;
-        // }
+    //     // if (scrollContainerEl.scrollTop + containerHeight < scrollContainerEl.scrollHeight) {
+    //     //     // 如果滚动到局部滚动容器的底部，将滚动事件传递给局部容器
+    //     //     scrollContainerEl.scrollTop += 10;
+    //     //     window.scrollTo(0, scrollContainerEl.scrollTop);
+    //     //     // 停止处理全局滚动事件
+    //     //     return false;
+    //     // }
+
+    //     // // 处理向上滚动
+    //     // if (scrollDirection.value == 'up' && scrollContainerEl.scrollTop > 0) {
+    //     //     scrollContainerEl.scrollTop -= 10;
+    //     //     window.scrollTo(0, scrollContainerEl.scrollTop);
+    //     //     // 停止处理全局滚动事件
+    //     //     return false;
+    //     // }
     }
 }
 
@@ -258,6 +277,10 @@ onMounted(() => {
     const fullscreenContainerEl = fullscreenContainer.value;
 
     console.log("scrollContainerEl", scrollContainerEl)
+
+    // document.documentElement.style.overflow = 'hidden';//即：设置html元素的overflow属性hidden
+    // document.body.style.overflow = 'hidden'//移动端的可以这样设置
+
 
     window.addEventListener("scroll", handlePageScroll);
 
