@@ -69,8 +69,8 @@ const products = [
     ],
     about: [
       {
-        name:'SOFTWARE UPGRADES',
-        desc:'Connect the device to the computer and wait for the device to be recognized by the computer. After the recognition is successful, a new drive symbol will appear on the computer. Open this and replace the “DIAGNOSE" folder in the drive with the downloaded “DIAGNOSE" upgrade folder, and then power on again. The updated files can be obtained by contacting customer service or the official website.',
+        name: 'SOFTWARE UPGRADES',
+        desc: 'Connect the device to the computer and wait for the device to be recognized by the computer. After the recognition is successful, a new drive symbol will appear on the computer. Open this and replace the “DIAGNOSE" folder in the drive with the downloaded “DIAGNOSE" upgrade folder, and then power on again. The updated files can be obtained by contacting customer service or the official website.',
       }
     ],
     services: [
@@ -90,6 +90,33 @@ const products = [
       "Please follow the instructions after M3 connects the motorcycle.",
       "This USB cable is powered by 5V. It is only used when the PC is connected to the product for upgrading. It cannot be connected to a quick charger higher than 5V.",
     ],
+    qa: [
+      {
+        q: "Cómo Se puede agregar otros modelos al m3 que actualización se requiere",
+        a: "No hay forma de actualizar esto. Los tipos que son compatibles con a, b y c de M3 son fijos."
+      },
+      {
+        q: "It just arrived. There are several cables but no instructions on how to hook it up to my 2006, Suzuki C50 Boulevard. Please help me.",
+        a: "Señor, no tenemos forma de saber el estado de cada vehículo. Puede buscar en el manual del usuario o en línea para determinar primero la ubicación del cabezal de diagnóstico de la motocicleta y luego seleccionar el cable de conexión de acuerdo con el cabezal de diagnóstico."
+      }
+      ,
+      {
+        q: "It just arrived. There are several cables but no instructions on how to hook it up to my 2006, Suzuki C50 Boulevard. Please help me.",
+        a: "Señor, no tenemos forma de saber el estado de cada vehículo. Puede buscar en el manual del usuario o en línea para determinar primero la ubicación del cabezal de diagnóstico de la motocicleta y luego seleccionar el cable de conexión de acuerdo con el cabezal de diagnóstico."
+      },
+      {
+        q: "is het mogelijk om met fxtul m3 a honda cbr1000rr 2014 uit te lezen zie bij model invoer hiervoor geen optie",
+        a: "yes, but not in model list, need use system select, quick test"
+      },
+      {
+        q: "welke 11 talen ondersteunt fxtul(What 11 languages does FXTUL support)",
+        a: "Turkish, Spanish, Portuguese, Vietnamese, Khmer, Thai, English, French, Chinese Simplified, Chinese Traditional, Indonesian.  The German language has recently been added",
+      },
+      {
+        q: "Suporta as Yamaha do Brasil tipo Fazer 250 Lander 250 Crosser 150",
+        a: "The Yamaha motors change the model name in Brazil ，I just confirme Fazer is okay because we have a customer there , work fine. The other 2 models, I guess it will be ok. Use 'system select' ->'quick test'. Let device match the motor automatically"
+      }
+    ]
   },
 ];
 

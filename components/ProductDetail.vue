@@ -109,6 +109,31 @@
                 </div>
             </div>
         </div>
+
+        <div ref="qa" class="my-7 mx-auto max-w-7xl pb-7">
+            <p class="text-white text-left font-extrabold text-xl">QUESTIONS & ANSWERS</p>
+            <div class="text-[#b6b4b1] mb-4">
+                <div class="my-4" v-for="(item, index) in paginatedQA">
+                    <div class="mb-1">
+                        <span class="mr-2">问:</span>{{ item.q }}
+                    </div>
+                    <div>
+                        <span class="mr-2">答:</span>{{ item.a }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 翻页控制按钮 -->
+        <div class="flex justify-center">
+            <button @click="prevPage" :disabled="currentPage === 1" class="mr-2 px-4 py-2 text-white">
+                上一页
+            </button>
+            <div class="flex items-center"><span v-for="(item, index) in totalPages" class="mr-1 px-1 py-2" :class="{ 'text-white': currentPage === index+1, 'text-[#b6b4b1]': currentPage !== index+1, 'underline': currentPage === index+1 }">{{ item }}</span></div>
+            <button @click="nextPage" :disabled="currentPage === totalPages" class="px-4 py-2 text-white">
+                下一页
+            </button>
+        </div>
     </div>
 </template>
   
@@ -120,11 +145,36 @@ const scrollY = ref(0);
 const lastScrollY = ref(0);
 const scrollDirection = ref('down');
 
+// 翻页控制
+const itemsPerPage = 5;
+const currentPage = ref(1);
+const pagenumbers = ref(1)
+
+const nextPage = () => {
+  if (currentPage.value < totalPages.value) {
+    currentPage.value++;
+  }
+};
+
+const prevPage = () => {
+  if (currentPage.value > 1) {
+    currentPage.value--;
+  }
+};
+
 // const { product } = defineProps(['product'])
 // const product: Product = defineProps(['product'])
 const {
     product = undefined as Product | undefined
 } = defineProps(['product'])
+
+const paginatedQA = computed(() => {
+  const start = (currentPage.value - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
+  return product.qa.slice(start, end);
+});
+
+const totalPages = computed(() => Math.ceil(product.qa.length / itemsPerPage));
 
 const screenWidth = ref(0)
 const currentIndex = ref(0);
@@ -236,38 +286,38 @@ const handlePageScroll = () => {
         //     preventDefault: true,
         // })
 
-    //     // console.log("scrollContainerEl",scrollContainer.value?.scroll)
+        //     // console.log("scrollContainerEl",scrollContainer.value?.scroll)
 
-    //     // console.log("handlePageScroll", window.scrollY, window.innerHeight ,scrollContainerEl.scrollTop,scrollContainerEl.scrollHeight,containerHeight)
+        //     // console.log("handlePageScroll", window.scrollY, window.innerHeight ,scrollContainerEl.scrollTop,scrollContainerEl.scrollHeight,containerHeight)
 
-    //     // 判断是否滚动到局部滚动容器的底部
-    //     if (scrollContainerEl.scrollTop + scrollContainerEl.clientHeight < scrollContainerEl.scrollHeight) {
-    //         //     // 如果滚动到局部滚动容器的底部，将滚动事件传递给局部容器
-    //         //     scrollContainerEl.scrollTop += 10;
-    //         //     window.scrollTo(0,10)
-    //         //     lastScrollY.value = 0 
-    //         //     // event.preventDefault();
-    //         //     return false;
-    //         // console.log("scrollContainerEl", scrollContainer.value?.scroll)
+        //     // 判断是否滚动到局部滚动容器的底部
+        //     if (scrollContainerEl.scrollTop + scrollContainerEl.clientHeight < scrollContainerEl.scrollHeight) {
+        //         //     // 如果滚动到局部滚动容器的底部，将滚动事件传递给局部容器
+        //         //     scrollContainerEl.scrollTop += 10;
+        //         //     window.scrollTo(0,10)
+        //         //     lastScrollY.value = 0 
+        //         //     // event.preventDefault();
+        //         //     return false;
+        //         // console.log("scrollContainerEl", scrollContainer.value?.scroll)
 
-    //         // return scrollContainer.value?.sc
-    //     }
+        //         // return scrollContainer.value?.sc
+        //     }
 
-    //     // if (scrollContainerEl.scrollTop + containerHeight < scrollContainerEl.scrollHeight) {
-    //     //     // 如果滚动到局部滚动容器的底部，将滚动事件传递给局部容器
-    //     //     scrollContainerEl.scrollTop += 10;
-    //     //     window.scrollTo(0, scrollContainerEl.scrollTop);
-    //     //     // 停止处理全局滚动事件
-    //     //     return false;
-    //     // }
+        //     // if (scrollContainerEl.scrollTop + containerHeight < scrollContainerEl.scrollHeight) {
+        //     //     // 如果滚动到局部滚动容器的底部，将滚动事件传递给局部容器
+        //     //     scrollContainerEl.scrollTop += 10;
+        //     //     window.scrollTo(0, scrollContainerEl.scrollTop);
+        //     //     // 停止处理全局滚动事件
+        //     //     return false;
+        //     // }
 
-    //     // // 处理向上滚动
-    //     // if (scrollDirection.value == 'up' && scrollContainerEl.scrollTop > 0) {
-    //     //     scrollContainerEl.scrollTop -= 10;
-    //     //     window.scrollTo(0, scrollContainerEl.scrollTop);
-    //     //     // 停止处理全局滚动事件
-    //     //     return false;
-    //     // }
+        //     // // 处理向上滚动
+        //     // if (scrollDirection.value == 'up' && scrollContainerEl.scrollTop > 0) {
+        //     //     scrollContainerEl.scrollTop -= 10;
+        //     //     window.scrollTo(0, scrollContainerEl.scrollTop);
+        //     //     // 停止处理全局滚动事件
+        //     //     return false;
+        //     // }
     }
 }
 
@@ -288,6 +338,7 @@ onMounted(() => {
     screenWidth.value = window.innerWidth
     window.addEventListener('resize', handleResize);
     initializeVisibleThumbnails();
+
 });
 
 onBeforeUnmount(() => {
