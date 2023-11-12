@@ -23,9 +23,9 @@ console.log("index page isIndex===>", isIndex)
         <img :src="slogan" alt="slogan" class="object-cover object-center w-full mt-4">
         <img :src="mappic" alt="map" class="object-cover object-center w-full ">
         <img :src="branchs" alt="branchs" class="object-cover object-center w-full ">
-        <section class="mx-auto mt-4 container">
+        <!-- <section class="mx-auto mt-4 container">
             <Introduce1 />
-        </section>
+        </section> -->
         <section class='mx-auto mt-4 container'>
             <PopularProdcts />
         </section>

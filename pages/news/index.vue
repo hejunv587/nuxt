@@ -52,10 +52,11 @@
         <!-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4"> -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
           <!-- 用 v-for 渲染每个系列 -->
-          <div v-for="item in filteredBlog" :key="item.id"
+          <div v-for="item in pageBolg" :key="item.id"
             class="border border-[#b6b4b1] rounded-md hover:border-blue-500 hover:shadow-md w-full mx-auto overflow-hidden">
             <a :href="`/news/${item.id}`" class="block">
-              <img :src="`/images/blog/${item.image}`" class="w-full aspect-[612/408]  object-cover rounded-t-md transform transition-transform duration-300 ease-in-out hover:scale-105">
+              <img :src="`/images/blog/${item.image}`"
+                class="w-full aspect-[612/408]  object-cover rounded-t-md transform transition-transform duration-300 ease-in-out hover:scale-105">
               <div class="m-4">
                 <h3 class="text-lg font-medium text-white mb-2">{{ item.name }}</h3>
                 <p class="text-xs text-white mb-2">{{ item.date }}</p>
@@ -64,6 +65,23 @@
             </a>
           </div>
         </div>
+      </div>
+
+      <!-- 翻页控制按钮 -->
+      <div class="flex justify-center mt-4">
+        <button @click="prevPage" :disabled="currentPage === 1" class="mr-2 px-4 py-2 text-white">
+          上一页
+        </button>
+        <div class="flex items-center">
+          <span v-for="(item, index) in totalPages" class="mr-1 px-1 py-2 cursor-pointer"
+            :class="{ 'text-white': currentPage === index + 1, 'text-[#b6b4b1]': currentPage !== index + 1, 'underline': currentPage === index + 1 }"
+            @click="clickPage(item)">
+            {{ item }}
+          </span>
+        </div>
+        <button @click="nextPage" :disabled="currentPage === totalPages" class="px-4 py-2 text-white">
+          下一页
+        </button>
       </div>
     </div>
   </div>
@@ -76,6 +94,35 @@ useHead({
     { name: 'description', content: '所有FXFINE新闻动态' }
   ]
 })
+
+// 翻页控制
+const itemsPerPage = 6;
+const currentPage = ref(1);
+const pagenumbers = ref(1)
+
+const nextPage = () => {
+  if (currentPage.value < totalPages.value) {
+    currentPage.value++;
+  }
+};
+
+const prevPage = () => {
+  if (currentPage.value > 1) {
+    currentPage.value--;
+  }
+};
+
+const clickPage = (page: number) => {
+  currentPage.value = page
+}
+
+const pageBolg = computed(() => {
+  const start = (currentPage.value - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
+  return filteredBlog.value.slice(start, end);
+});
+
+const totalPages = computed(() => Math.ceil(filteredBlog.value.length / itemsPerPage));
 
 const route = useRoute()
 console.log("route.hash", route.hash)
@@ -165,9 +212,36 @@ const blogData = [
     ename: 'Vintage Motorcycles｜Eight popular cars to compare',
     name: '老爷车|八款热门车对比',
     image: 'Vintage Motorcycles.png',
-    date: '2022-08-08',
+    date: '2022-08-06',
     serie: '测试指南',
     description: "喜欢老式摩托车的人，一定有一种特殊的复古感。在本文中，我们将介绍八款流行的复古自行车，为准备购买复古摩托车的人提供参考指南。",
+  },
+  {
+    id: 'test7',
+    ename: 'How to change tires on a motorcycle？',
+    name: '如何更换摩托车轮胎',
+    image: 'motorcycle tires fxtul.jpg',
+    date: '2022-08-08',
+    serie: '测试指南',
+    description: "人们有没有更换过摩托车轮胎？你们中的大多数人应该在购买轮胎时请商店里的人帮你更换轮胎。虽然向商店寻求帮助很方便，但需要额外的钱。如果你省了那么多钱，你就可以买到你考虑了很久的改装零件！所以这一次，让我们解释一下如何自己更换轮胎。",
+  },
+  {
+    id: 'test8',
+    ename: 'What Type of Motorcycle Should I Get? The Best Guide for Motorcycle Beginners',
+    name: '我应该买什么类型的摩托车？摩托车初学者的最佳指南',
+    image: 'What Type of Motorcycle Should I Get_ _ Fxtul.jpg',
+    date: '2022-07-29',
+    serie: '测试指南',
+    description: "没有什么能比得上骑着您最喜欢的摩托车在露天骑行的自由和乐趣了。这是一种令人兴奋的休闲运动形式，开辟了一个全新的有趣世界。摩托车既方便又省时，可用于日常通勤而不会造成交通拥堵，也可以在工作或生活压力大时作为放松和释放压力的一种方式。",
+  },
+  {
+    id: 'test9',
+    ename: 'Do Motorcycle Helmets Expire?',
+    name: '摩托车头盔会过期吗？',
+    image: 'Motorcycle helmet _ Fxtul.jpg',
+    date: '2022-07-26',
+    serie: '测试指南',
+    description: "摩托车头盔对于摩托车手来说是一种非常重要的装备。它可以保护主人免受头部受伤。大多数人在购买摩托车头盔时不会注意生产日期或有效期。他们购买它只是因为它看起来不错，但这是一种非常错误的方法。在选择头盔及其使用时必须遵守几个原则。特别要注意有效期，因为超过有效期时保护会减少。虽然不是食物，但摩托车头盔确实有“保质期”声明。所以摩托车头盔确实会过期。那么摩托车头盔的寿命有多长呢？合理的头盔有效期应该是多少？",
   },
 ]
 

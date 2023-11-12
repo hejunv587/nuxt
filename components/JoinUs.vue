@@ -16,7 +16,7 @@
         <div class="py-24 px-28 bg-red-800 text-white h-full flex flex-col p-16 md:p-24 relative z-10 justify-center">
             <h3 class="text-2xl mb-4 text-left ">自由的力量--摩托车</h3>
 
-            <p class="justify-center items-center">摩托车不仅仅是一种交通工具,它更是自由力量的代表.而一套好的摩托车只能设备,可以让这种自由更安全!</p>
+            <p class="justify-center items-center">摩托车不仅仅是一种交通工具,它更是自由力量的代表.而一套好的摩托车智能设备,可以让这种自由更安全!</p>
         </div>
         <div class="">
             <img :src="joinus2" alt="" class="block w-full">
