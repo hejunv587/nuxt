@@ -75,19 +75,41 @@ useHead({
   ]
 })
 
-const route = useRoute()
-console.log("route.hash", route.hash)
+// const route = useRoute()
+// console.log("route.hash", route)
 
-const selectedCategory = ref();
-if (route.hash) {
-  const hashValue = route.hash.slice(1); // remove the '#' character
-  const categoryIndex = parseInt(hashValue, 10); // convert to number
-  console.log("categoryIndex", categoryIndex)
+const selectedCategory = ref(0);
 
-  selectedCategory.value = categoryIndex;
-} else {
-  selectedCategory.value = 0;
-}
+console.log("hello")
+onMounted(() => {
+  console.log("hello")
+  const hash = window.location.hash
+  if (hash) {
+    const hashValue = hash.slice(1); // remove the '#' character
+    const categoryIndex = parseInt(hashValue, 10); // convert to number
+
+    selectedCategory.value = categoryIndex;
+  } else {
+    selectedCategory.value = 0;
+  }
+  console.log("selectedCategory", selectedCategory.value)
+
+  // watch(() => window.location.hash, handleHashChange);
+})
+
+// const handleHashChange = () => {
+//   const hash = window.location.hash
+
+//   if (hash) {
+//     const hashValue = hash.slice(1); // remove the '#' character
+//     const categoryIndex = parseInt(hashValue, 10); // convert to number
+
+//     selectedCategory.value = categoryIndex;
+//   } else {
+//     selectedCategory.value = 0;
+//   }
+
+// }
 
 const updateHash = (index: number) => {
   // 更新 URL 的哈希片段，例如：#category=0
@@ -112,6 +134,12 @@ const series = [
   },
   {
     cname: "摩托车坡度仪系列"
+  },
+  {
+    cname: "摩托车头盔系列"
+  },
+  {
+    cname: "摩托车蓝牙耳机系列"
   },
 ]
 

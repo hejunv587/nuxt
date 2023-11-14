@@ -66,12 +66,12 @@ const footerLinks = [
     {
         title: "产品",
         links: [
-            { name: "摩托车行车记录仪系列", link: "/" },
-            { name: "摩托车CarPlay系列", link: "/" },
-            { name: "摩托车胎压监测系列", link: "/" },
-            { name: "摩托车坡度仪系列", link: "/" },
-            { name: "摩托车头盔系列", link: "/" },
-            { name: "摩托车蓝牙耳机系列", link: "/" },
+            { name: "摩托车行车记录仪系列", link: "/products#0" },
+            { name: "摩托车CarPlay系列", link: "/products#1" },
+            { name: "摩托车胎压监测系列", link: "/products#2" },
+            { name: "摩托车坡度仪系列", link: "/products#3" },
+            { name: "摩托车头盔系列", link: "/products#4" },
+            { name: "摩托车蓝牙耳机系列", link: "/products#5" },
 
         ],
     },
@@ -98,13 +98,13 @@ const footerLinks = [
     {
         title: "关于FXFINE",
         links: [
-            { name: "关于我们", link: "/" },
+            { name: "关于我们", link: "/about" },
             // { name: "资料下载", link: "/" },
             // { name: "配送服务", link: "/" },
             { name: "维护及保修期", link: "/" },
             { name: "全球销售条款", link: "/" },
             { name: "隐私权政策", link: "/" },
-            { name: "联系我们", link: "/" },
+            { name: "联系我们", link: "/contact" },
 
         ],
     }

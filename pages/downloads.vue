@@ -19,7 +19,7 @@
           <!-- Table Headings -->
           <thead>
             <tr>
-              <th class="py-2 px-4 border-b text-left">标题</th>
+              <th class="py-2 px-4 border-b text-left w-[300px]" >标题</th>
               <!-- <th class="py-2 px-4 border-b text-left">分类</th> -->
               <th class="py-2 px-4 border-b text-left">文件格式</th>
               <th class="py-2 px-4 border-b text-left">更新日期</th>
@@ -29,14 +29,14 @@
 
           <!-- Table Body -->
           <tbody>
-            <tr v-for="(item, index) in downloadList" :key="index">
+            <tr v-for="(item, index) in filteredDownload" :key="index">
               <td class="py-2 px-4 border-b">{{ item.title }}</td>
               <!-- <td class="py-2 px-4 border-b">{{ item.category }}</td> -->
               <td class="py-2 px-4 border-b">{{ item.fileType }}</td>
               <td class="py-2 px-4 border-b">{{ item.updatedAt }}</td>
               <td class="py-2 px-4 border-b">
-                <button @click="downloadItem(item)" class="text-blue-500 underline">Download</button>
-                <button @click="browseItem(item)" class="text-green-500 underline ml-2">Browse</button>
+                <button @click="downloadItem(item)" class="text-blue-500 underline">下载</button>
+                <button @click="browseItem(item)" class="text-green-500 underline ml-2">浏览</button>
               </td>
             </tr>
           </tbody>
@@ -145,9 +145,9 @@ const downloadList = ref([
     updatedAt: '2023-11-12',
   },
   {
-    title: 'Item 2',
-    category: '操作视频',
-    fileType: 'Word',
+    title: 'Item 2 Item 2 Item 2 Item 2 Item 2 Item 2 Item 2',
+    category: '升级软件',
+    fileType: 'rar',
     updatedAt: '2023-11-13',
   },
   {
