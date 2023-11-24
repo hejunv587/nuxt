@@ -10,7 +10,7 @@
                 <li>全球诚招经销商</li>
             </ul>
             <button class="bg-[#8b2323] text-white p-2 mt-8">
-                加入我们
+                <a href="/becomedealer">成为经销商</a>
             </button>
         </div>
         <div class="py-24 px-28 bg-red-800 text-white h-full flex flex-col p-16 md:p-24 relative z-10 justify-center">

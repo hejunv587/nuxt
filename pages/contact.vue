@@ -22,7 +22,7 @@ import whyus from "~/assets/images/whyus.png"
                         <div class="text-[#b6b4b1] text-left">
                             <p class="leading-7">如果您的问题在常见问题解签中没有得到解答，您可以在线或通过以下任何一种方式联系我们。无论您有什么问题，我们都会为您提供最好的售前和售后服务!</p>
                             <ul class="list-disc my-5 pl-5 space-y-3">
-                                <li>邮箱: 872819119@qq.com (如有问题，24小时内回复)</li>
+                                <li>邮箱: fxfine@126.com (如有问题，24小时内回复)</li>
                                 <li>手机: 13760354925</li>
                                 <li>电话: 0755-27787225</li>
                                 <li>地址: 广东省深圳市宝安区福海街道桥头港华兴三区五栋五楼</li>

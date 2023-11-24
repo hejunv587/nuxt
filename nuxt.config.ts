@@ -3,7 +3,7 @@
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss","@nuxt/content"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxt/content"],
   tailwindcss: {
     cssPath: "~/assets/css/tailwind.css",
     configPath: "tailwind.config",
@@ -17,11 +17,11 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "Autool Nuxt3",
+      title: "FXFINE 福克菲官方网站",
       meta: [
         {
           name: "description",
-          content: "everything about Autool&nuxt3",
+          content: "Fxfine 福克菲官方网站",
         },
       ],
       link: [

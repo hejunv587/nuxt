@@ -1,6 +1,6 @@
 <template>
     <section class="sm:pl-16 pl-8 top-0">
-        <div class="sm:px-16 px-8 sm:py-24 py-12 mx-auto">
+        <div class="sm:px-16 px-8 sm:py-24 py-12 mx-auto container">
             <!-- <ContentDoc path="/content/products/detection/AS502.md"/> -->
             <!-- <ContentDoc path="/readme" /> -->
             <ContentDoc>
