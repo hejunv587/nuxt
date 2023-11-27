@@ -129,11 +129,100 @@
             <button @click="prevPage" :disabled="currentPage === 1" class="mr-2 px-4 py-2 text-white">
                 上一页
             </button>
-            <div class="flex items-center"><span v-for="(item, index) in totalPages" class="mr-1 px-1 py-2" :class="{ 'text-white': currentPage === index+1, 'text-[#b6b4b1]': currentPage !== index+1, 'underline': currentPage === index+1 }">{{ item }}</span></div>
+            <div class="flex items-center"><span v-for="(item, index) in totalPages" class="mr-1 px-1 py-2"
+                    :class="{ 'text-white': currentPage === index + 1, 'text-[#b6b4b1]': currentPage !== index + 1, 'underline': currentPage === index + 1 }">{{
+                        item }}</span></div>
             <button @click="nextPage" :disabled="currentPage === totalPages" class="px-4 py-2 text-white">
                 下一页
             </button>
         </div>
+
+        <!-- 一个整体白色背景的客户评价区域 -->
+        <div class="bg-white w-full">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="flex flex-col items-center">
+                    <div>客户评价</div>
+                    <div>4.9</div>
+                    <Starts rating="2.9" starSize="36"></Starts>
+                    <div>34 评价</div>
+                </div>
+                <div class="flex flex-col">
+                    <div class="flex flex-row items-center " v-for="(score, index) in scores" :key="index">
+                        <div class="StarProgressBar__Name svelte-1wgsjsx">{{ score.key }}</div>
+                        <div class="mx-2">
+                            <svg style="width: var(--star-size, 14px); height: var(--star-size, 14px)" viewBox="0 0 24 24"
+                                version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <defs>
+                                    <clipPath id="c9d62ca8-456d-43a1-a3d0-f6a062b6212b">
+                                        <path
+                                            d="M12,0.145898039 L8.47328849,7.29179607 L0.587321804,8.43769411 L6.2936609,14 L4.94657697,21.854102 L12,18.145898 L19.053423,21.854102 L17.7063391,14 L23.4126782,8.43769411 L15.5267115,7.29179607 L12,0.145898039 Z">
+                                        </path>
+                                    </clipPath>
+                                </defs>
+                                <rect x="0" y="0" width="24" height="24"
+                                    clip-path="url(#c9d62ca8-456d-43a1-a3d0-f6a062b6212b)" style="fill: #ffb303">
+                                </rect>
+                                <rect x="0" y="0" width="100%" height="24"
+                                    clip-path="url(#c9d62ca8-456d-43a1-a3d0-f6a062b6212b)" style="fill: #ffb303">
+                                </rect>
+                            </svg>
+                        </div>
+                        <div class="mx-2 bg-[#e4e5e7] rounded w-48 h-2">
+                            <span class="bg-[#ffb303] rounded block h-full"
+                                :style="'width:' + (score.value / totalReviews) * 100 + '%'"></span>
+                        </div>
+                        <div style="white-space: nowrap;">{{ score.value }}</div>
+                    </div>
+
+                </div>
+
+                <div class="col-span-1">
+                    <div class="flex items-center p-4">
+                        <figure class="bg-slate-100 rounded-xl dark:bg-slate-800">
+                            <img class="w-24 h-24" src="/sarah-dayan.jpg" alt="" width="384" height="512">
+                            <div class="pt-6 space-y-4">
+                                <blockquote>
+                                    <p class="text-lg">
+                                        “Tailwind CSS 是我见过的唯一一个在大型团队中能够良好扩展的框架。它易于定制，适应任何设计，并且构建后的文件大小非常小。”
+                                    </p>
+                                </blockquote>
+                                <figcaption>
+                                    <div> Sarah Dayan </div>
+                                    <div> Algolia 员工工程师 </div>
+                                </figcaption>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="text-xs font-medium text-gray-600 text-center">
+                        <span>5星评价</span>
+                        <span>4星评价</span>
+                        <span>3星评价</span>
+                        <span>2星评价</span>
+                        <span>1星评价</span>
+                    </div>
+                </div>
+                <div class="col-span-1">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="col-span-1">
+                            <div class="text-sm font-medium text-gray-600 text-center">
+                                <span>总评价数</span>
+                            </div>
+                        </div>
+                        <div class="col-span-1">
+                            <div class="text-sm font-medium text-gray-600 text-center">
+                                <span>5星评价</span>
+                                <span>4星评价</span>
+                                <span>3星评价</span>
+                                <span>2星评价</span>
+                                <span>1星评价</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 </template>
   
@@ -151,15 +240,15 @@ const currentPage = ref(1);
 const pagenumbers = ref(1)
 
 const nextPage = () => {
-  if (currentPage.value < totalPages.value) {
-    currentPage.value++;
-  }
+    if (currentPage.value < totalPages.value) {
+        currentPage.value++;
+    }
 };
 
 const prevPage = () => {
-  if (currentPage.value > 1) {
-    currentPage.value--;
-  }
+    if (currentPage.value > 1) {
+        currentPage.value--;
+    }
 };
 
 // const { product } = defineProps(['product'])
@@ -169,10 +258,94 @@ const {
 } = defineProps(['product'])
 
 const paginatedQA = computed(() => {
-  const start = (currentPage.value - 1) * itemsPerPage;
-  const end = start + itemsPerPage;
-  return product.qa.slice(start, end);
+    const start = (currentPage.value - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    return product.qa.slice(start, end);
 });
+
+const reviews = [
+    {
+        "name": "赵六",
+        "score": 4,
+        "review": "产品非常实用，我很喜欢。",
+        "email": "zhaoliu@example.com"
+    },
+    {
+        "name": "孙七",
+        "score": 5,
+        "review": "非常好的购物体验，产品质量上乘。",
+        "email": "sunqi@example.com"
+    },
+    {
+        "name": "周八",
+        "score": 3,
+        "review": "产品还不错，但是物流有些慢。",
+        "email": "zhouba@example.com"
+    },
+    {
+        "name": "吴九",
+        "score": 4,
+        "review": "服务态度很好，产品也很满意。",
+        "email": "wujui@example.com"
+    },
+    {
+        "name": "郑十",
+        "score": 5,
+        "review": "下次还会再来，推荐给朋友了。",
+        "email": "zhengshi@example.com"
+    },
+    {
+        "name": "王十一",
+        "score": 4,
+        "review": "产品质量很好，下次还会再买。",
+        "email": "wangshiyi@example.com"
+    },
+    {
+        "name": "李十二",
+        "score": 5,
+        "review": "非常满意，服务也很好。",
+        "email": "lishier@example.com"
+    },
+    {
+        "name": "张十三",
+        "score": 4,
+        "review": "产品很好，物流也很快。",
+        "email": "zhangshisan@example.com"
+    },
+    {
+        "name": "赵十四",
+        "score": 5,
+        "review": "非常满意，产品质量很好。",
+        "email": "zhaoshisi@example.com"
+    },
+    {
+        "name": "孙十五",
+        "score": 4,
+        "review": "产品很实用，我很喜欢。",
+        "email": "sunshiwu@example.com"
+    }
+]
+
+let scores = [
+    { key: 5, value: 0 },
+    { key: 4, value: 0 },
+    { key: 3, value: 0 },
+    { key: 2, value: 0 },
+    { key: 1, value: 0 }
+]
+let totalReviews = reviews.length;
+
+for (let review of reviews) {
+    let score = review.score; // 假设每个评价对象都有一个名为`score`的属性来存储评价的分数
+    for (let scoreObj of scores) {
+        if (scoreObj.key === score) {
+            scoreObj.value++;
+            break;
+        }
+    }
+}
+
+
 
 const totalPages = computed(() => Math.ceil(product.qa.length / itemsPerPage));
 

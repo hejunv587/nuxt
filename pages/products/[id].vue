@@ -20,7 +20,7 @@ if (!product) {
 
 <template>
     <Head>
-        <Title>Nuxt Autool | {{ product.name }}</Title>
+        <Title>福克菲FXFINE | {{ product.name }}</Title>
         <Meta name="description" :content="product.description" />
     </Head>
 
