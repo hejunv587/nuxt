@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-[#2d2d30]" ref="fullscreenContainer">
+    <div class="bg-[#2d2d30] py-4" ref="fullscreenContainer">
         <div class="flex flex-col md:flex-row">
             <div class="p-7 w-full md:w-1/2 md:h-screen flex flex-col">
                 <div class="max-h-[80%] h-auto">
@@ -138,15 +138,15 @@
         </div>
 
         <!-- 一个整体白色背景的客户评价区域 -->
-        <div class="bg-white w-full">
+        <div class="bg-white w-full pt-6 my-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="flex flex-col items-center">
-                    <div>客户评价</div>
-                    <div>4.9</div>
-                    <Starts rating="2.9" starSize="36"></Starts>
-                    <div>34 评价</div>
+                <div class="flex flex-col items-center basis-1/3 my-3 mx-auto">
+                    <div class="text-xl font-semibold">客户评价</div>
+                    <div class="text-base">{{ avg }}</div>
+                    <Starts :rating="avg" starSize="36" name="total"></Starts>
+                    <div class="text-base">{{ totalReviews }}评价</div>
                 </div>
-                <div class="flex flex-col">
+                <div class="flex flex-col items-center basis-1/3 my-3 mx-auto">
                     <div class="flex flex-row items-center " v-for="(score, index) in scores" :key="index">
                         <div class="StarProgressBar__Name svelte-1wgsjsx">{{ score.key }}</div>
                         <div class="mx-2">
@@ -176,49 +176,34 @@
 
                 </div>
 
-                <div class="col-span-1">
-                    <div class="flex items-center p-4">
-                        <figure class="bg-slate-100 rounded-xl dark:bg-slate-800">
-                            <img class="w-24 h-24" src="/sarah-dayan.jpg" alt="" width="384" height="512">
-                            <div class="pt-6 space-y-4">
-                                <blockquote>
-                                    <p class="text-lg">
-                                        “Tailwind CSS 是我见过的唯一一个在大型团队中能够良好扩展的框架。它易于定制，适应任何设计，并且构建后的文件大小非常小。”
+
+
+            </div>
+            <div class="flex flex-row bg-[#fdfdfd] gap-4 overflow-x-scroll p-4">
+                <div class="flex p-2 w-[287px]" v-for="(item, index) in reviews" :key="index">
+                    <figure class="bg-white rounded-sm overflow-y-hidden shadow-xl overflow-x-hidden">
+                        <div class="h-[283px] w-[287px] mb-2">
+                            <img class="h-full w-full object-cover" :src="item.image" alt="">
+                        </div>
+                        
+                        <Starts :rating="item.score" starSize="24" :name="item.name"></Starts>
+                        <div class="p-2 space-y-2 h-full">
+                            <figcaption>
+                                <div class="text-sm"> {{ item.name }} </div>
+                            </figcaption>
+                            <blockquote>
+                                <div class="text-base overflow-y-auto  max-h-[200px]">
+                                    <p>
+                                        {{ item.review }}
                                     </p>
-                                </blockquote>
-                                <figcaption>
-                                    <div> Sarah Dayan </div>
-                                    <div> Algolia 员工工程师 </div>
-                                </figcaption>
-                            </div>
-                        </figure>
-                    </div>
-                    <div class="text-xs font-medium text-gray-600 text-center">
-                        <span>5星评价</span>
-                        <span>4星评价</span>
-                        <span>3星评价</span>
-                        <span>2星评价</span>
-                        <span>1星评价</span>
-                    </div>
-                </div>
-                <div class="col-span-1">
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        <div class="col-span-1">
-                            <div class="text-sm font-medium text-gray-600 text-center">
-                                <span>总评价数</span>
-                            </div>
+                                </div>
+
+                            </blockquote>
+
                         </div>
-                        <div class="col-span-1">
-                            <div class="text-sm font-medium text-gray-600 text-center">
-                                <span>5星评价</span>
-                                <span>4星评价</span>
-                                <span>3星评价</span>
-                                <span>2星评价</span>
-                                <span>1星评价</span>
-                            </div>
-                        </div>
-                    </div>
+                    </figure>
                 </div>
+
             </div>
         </div>
 
@@ -263,42 +248,50 @@ const paginatedQA = computed(() => {
     return product.qa.slice(start, end);
 });
 
-const reviews = [
+const reviews = ref([
     {
         "name": "赵六",
         "score": 4,
-        "review": "产品非常实用，我很喜欢。",
-        "email": "zhaoliu@example.com"
+        "review": "产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。",
+        "email": "zhaoliu@example.com",
+        "image": "https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/d2957d59d2b54d82937ec6c3f66424f6.jpeg"
     },
     {
         "name": "孙七",
         "score": 5,
         "review": "非常好的购物体验，产品质量上乘。",
-        "email": "sunqi@example.com"
+        "email": "sunqi@example.com",
+        "image": "https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/eec8aeaa51854a1fa8c68ced1e62c988.jpeg"
     },
     {
         "name": "周八",
         "score": 3,
         "review": "产品还不错，但是物流有些慢。",
-        "email": "zhouba@example.com"
+        "email": "zhouba@example.com",
+        "image": "https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/cd32072d15714b748c0a9199e6042725.jpeg"
     },
     {
         "name": "吴九",
         "score": 4,
         "review": "服务态度很好，产品也很满意。",
-        "email": "wujui@example.com"
+        "email": "wujui@example.com",
+        "image": "https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/fae8d8a02490420b811893bed3498a6a.jpeg"
+
     },
     {
         "name": "郑十",
         "score": 5,
         "review": "下次还会再来，推荐给朋友了。",
-        "email": "zhengshi@example.com"
+        "email": "zhengshi@example.com",
+        "image": "https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/08588eaa59aa41fcaf1989f658413189.jpeg"
+
     },
     {
         "name": "王十一",
         "score": 4,
         "review": "产品质量很好，下次还会再买。",
-        "email": "wangshiyi@example.com"
+        "email": "wangshiyi@example.com",
+        "image": "https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/e133d0c682ce45a398a762a56d04a534.jpeg"
     },
     {
         "name": "李十二",
@@ -324,7 +317,8 @@ const reviews = [
         "review": "产品很实用，我很喜欢。",
         "email": "sunshiwu@example.com"
     }
-]
+])
+
 
 let scores = [
     { key: 5, value: 0 },
@@ -333,17 +327,21 @@ let scores = [
     { key: 2, value: 0 },
     { key: 1, value: 0 }
 ]
-let totalReviews = reviews.length;
+let totalReviews = reviews.value.length;
+let avg = ref(0);
 
-for (let review of reviews) {
+for (let review of reviews.value) {
     let score = review.score; // 假设每个评价对象都有一个名为`score`的属性来存储评价的分数
+    avg.value += review.score
     for (let scoreObj of scores) {
         if (scoreObj.key === score) {
             scoreObj.value++;
             break;
         }
     }
+
 }
+avg.value = avg.value / totalReviews;
 
 
 

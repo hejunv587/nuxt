@@ -5,7 +5,7 @@
                 <svg :width="starSize" :height="starSize" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor" stroke="none" stroke-linecap="round" stroke-linejoin="round">
                     <defs>
-                        <linearGradient :id="'star-gradient' + index" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <linearGradient :id="name + 'star' + index" x1="0%" y1="0%" x2="100%" y2="0%">
                             <stop :offset="calculateOffset0(rating, index) + '%'"
                                 style="stop-color: #ffb303; stop-opacity: 1" v-if="calculateOffset0(rating, index)" />
                             <stop :offset="calculateOffset1(rating, index) + '%'"
@@ -94,7 +94,7 @@
 <script lang="ts" setup>
 import { defineComponent, PropType } from 'vue';
 
-const { rating, starSize } = defineProps(['rating', 'starSize'])
+const { rating, starSize, name = '' } = defineProps(['rating', 'starSize', 'name'])
 
 onMounted(() => {
     console.log("rating", rating)
@@ -107,7 +107,7 @@ const calculateOffset0 = (rating: number, index: number) => {
 }
 
 const starFill = (index: number) => {
-    return `url('#star-gradient${index}')`;
+    return `url('#${name}star${index}')`;
 };
 
 const calculateOffset1 = (rating: number, index: number) => {
