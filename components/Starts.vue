@@ -92,7 +92,6 @@
 </template>
   
 <script lang="ts" setup>
-import { defineComponent, PropType } from 'vue';
 
 const { rating, starSize, name = '' } = defineProps(['rating', 'starSize', 'name'])
 

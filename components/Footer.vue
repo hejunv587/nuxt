@@ -101,7 +101,7 @@ const footerLinks = [
             { name: "关于我们", link: "/about" },
             // { name: "资料下载", link: "/" },
             // { name: "配送服务", link: "/" },
-            { name: "维护及保修期", link: "/" },
+            { name: "维护及保修期", link: "/warranty" },
             { name: "全球销售条款", link: "/" },
             { name: "隐私权政策", link: "/" },
             { name: "联系我们", link: "/contact" },

@@ -110,7 +110,7 @@
             </div>
         </div>
 
-        <div ref="qa" class="my-7 mx-auto max-w-7xl pb-7">
+        <div ref="qa" class="my-7 mx-auto max-w-7xl pb-7 px-4">
             <p class="text-white text-left font-extrabold text-xl">QUESTIONS & ANSWERS</p>
             <div class="text-[#b6b4b1] mb-4">
                 <div class="my-4" v-for="(item, index) in paginatedQA">
@@ -182,23 +182,33 @@
             <div class="flex flex-row bg-[#fdfdfd] gap-4 overflow-x-scroll p-4">
                 <div class="flex p-2 w-[287px]" v-for="(item, index) in reviews" :key="index">
                     <figure class="bg-white rounded-sm overflow-y-hidden shadow-xl overflow-x-hidden">
-                        <div class="h-[283px] w-[287px] mb-2">
-                            <img class="h-full w-full object-cover" :src="item.image" alt="">
+                        <div class="h-[283px] w-[287px] mb-2 select-none">
+                            <!-- <div
+                                class="relative w-full h-full overflow-hidden after:clear-both after:block after:content-['']">
+                                <div v-for="(image, index) in item.image" :key="index"
+                                    class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                                    :class="{
+                                        'hidden': currentIndex !== index
+                                    }" style="backface-visibility: hidden">
+                                    <img class="h-full w-full object-cover" :src="image" alt="">
+                                </div>
+                            </div> -->
+                            <ReviewImage :images="item.image"></ReviewImage>
                         </div>
-                        
+
                         <Starts :rating="item.score" starSize="24" :name="item.name"></Starts>
-                        <div class="p-2 space-y-2 h-full">
-                            <figcaption>
+                        <div class="p-2 space-y-2 h-full overflow-x-hidden select-none">
+                            
                                 <div class="text-sm"> {{ item.name }} </div>
-                            </figcaption>
-                            <blockquote>
+                            
+                            
                                 <div class="text-base overflow-y-auto  max-h-[200px]">
                                     <p>
                                         {{ item.review }}
                                     </p>
                                 </div>
 
-                            </blockquote>
+                           
 
                         </div>
                     </figure>
@@ -254,28 +264,28 @@ const reviews = ref([
         "score": 4,
         "review": "产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。",
         "email": "zhaoliu@example.com",
-        "image": "https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/d2957d59d2b54d82937ec6c3f66424f6.jpeg"
+        "image": ["https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/d320d14c2bdc487c8619aaa6472515af.jpeg", "https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/d2957d59d2b54d82937ec6c3f66424f6.jpeg",]
     },
     {
         "name": "孙七",
         "score": 5,
         "review": "非常好的购物体验，产品质量上乘。",
         "email": "sunqi@example.com",
-        "image": "https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/eec8aeaa51854a1fa8c68ced1e62c988.jpeg"
+        "image": ["https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/eec8aeaa51854a1fa8c68ced1e62c988.jpeg"]
     },
     {
         "name": "周八",
         "score": 3,
         "review": "产品还不错，但是物流有些慢。",
         "email": "zhouba@example.com",
-        "image": "https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/cd32072d15714b748c0a9199e6042725.jpeg"
+        "image": ["https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/cd32072d15714b748c0a9199e6042725.jpeg"]
     },
     {
         "name": "吴九",
         "score": 4,
         "review": "服务态度很好，产品也很满意。",
         "email": "wujui@example.com",
-        "image": "https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/fae8d8a02490420b811893bed3498a6a.jpeg"
+        "image": ["https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/fae8d8a02490420b811893bed3498a6a.jpeg"]
 
     },
     {
@@ -283,7 +293,7 @@ const reviews = ref([
         "score": 5,
         "review": "下次还会再来，推荐给朋友了。",
         "email": "zhengshi@example.com",
-        "image": "https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/08588eaa59aa41fcaf1989f658413189.jpeg"
+        "image": ["https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/08588eaa59aa41fcaf1989f658413189.jpeg"]
 
     },
     {
@@ -291,7 +301,7 @@ const reviews = ref([
         "score": 4,
         "review": "产品质量很好，下次还会再买。",
         "email": "wangshiyi@example.com",
-        "image": "https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/e133d0c682ce45a398a762a56d04a534.jpeg"
+        "image": ["https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/e133d0c682ce45a398a762a56d04a534.jpeg"]
     },
     {
         "name": "李十二",
