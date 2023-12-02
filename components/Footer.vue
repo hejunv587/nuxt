@@ -39,9 +39,9 @@
                 <div class="flex flex-1 justify-start items-center gap-2 font-montserrat cursor-pointer">
                     <!-- <img src="@/assets/icons/copyrightSign.svg" alt="copyright sign" width="20" height="20"
                         class="rounded-full m-0" /> -->
-                    <p>©2012-2023 福克菲FXFINE 版权所有</p>
+                    <p>©2015-2023 福克菲FXFINE 版权所有</p>
                 </div>
-                <p class="font-montserrat cursor-pointer">粤ICP备20053092号</p>
+                <p class="font-montserrat cursor-pointer">粤ICP备2023138110号</p>
             </div>
         </div>
     </footer>
@@ -101,9 +101,10 @@ const footerLinks = [
             { name: "关于我们", link: "/about" },
             // { name: "资料下载", link: "/" },
             // { name: "配送服务", link: "/" },
-            { name: "维护及保修期", link: "/warranty" },
-            { name: "全球销售条款", link: "/" },
-            { name: "隐私权政策", link: "/" },
+            { name: "售后服务", link: "/warranty" },
+            { name: "退换政策", link: "/returnpolicy" },
+            // { name: "全球销售条款", link: "/" },
+            // { name: "隐私权政策", link: "/" },
             { name: "联系我们", link: "/contact" },
             { name: "成为经销商", link: "/becomedealer" },
 

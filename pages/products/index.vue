@@ -1,4 +1,7 @@
 <template>
+  <div class="w-full  sm:h-[280px] md:h-[420px]">
+    <img :src="products" alt="" class="block max-w-full sticky top-0 left-0 h-full w-full object-cover object-center transition-opacity">
+  </div>
   <div class="bg-[#2d2d30]">
     <div class="max-w-7xl mx-auto p-8 ">
       <!-- <h1 class="text-3xl font-semibold mb-4">产品页面</h1> -->
@@ -68,6 +71,7 @@
 </template>
 
 <script lang="ts" setup>
+import products from "~/assets/images/products.jpg"
 useHead({
   title: 'FXFINE产品',
   meta: [
