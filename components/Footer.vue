@@ -7,7 +7,7 @@
                         <img :src="logo" alt="logo" width="150" height="46" class="m-0" />
                     </a>
                     <p class="mt-6 text-base leading-7 font-montserrat text-[#8e857c] sm:max-w-sm">
-                        FXFINE成立于中国深圳，多年来一直专注于全球摩托车智能与安全方案
+                        FXFINE福克菲成立于中国深圳，多年来一直专注于全球摩托车智能与安全方案
                         <br>
                     </p>
                     <div class="flex items-center gap-5 mt-8">
@@ -39,7 +39,7 @@
                 <div class="flex flex-1 justify-start items-center gap-2 font-montserrat cursor-pointer">
                     <!-- <img src="@/assets/icons/copyrightSign.svg" alt="copyright sign" width="20" height="20"
                         class="rounded-full m-0" /> -->
-                    <p>©2015-2023 福克菲FXFINE 版权所有</p>
+                    <p>©2015-2023 FXFINE福克菲 版权所有</p>
                 </div>
                 <p class="font-montserrat cursor-pointer">粤ICP备2023138110号</p>
             </div>

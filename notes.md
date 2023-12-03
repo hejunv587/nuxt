@@ -20,3 +20,8 @@
 * 文本颜色 #b6b4b1
 * 红色按钮背景色 #8b2323
 * 成为经销红色颜色号 #bd4343
+
+
+
+## 上线
+* yarn build生成.output, 然后通过winscp放到服务器上(/usr/local/nuxt3app),  pm2 status查看当前项目状态 , pm2 restart Nuxt3App 重启项目

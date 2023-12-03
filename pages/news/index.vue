@@ -89,9 +89,9 @@
   
 <script lang="ts" setup>
 useHead({
-  title: 'FXFINE新闻动态',
+  title: 'FXFINE福克菲新闻动态',
   meta: [
-    { name: 'description', content: '所有FXFINE新闻动态' }
+    { name: 'description', content: '所有FXFINE福克菲新闻动态' }
   ]
 })
 

@@ -101,7 +101,7 @@ onMounted(() => {
 
 const calculateOffset0 = (rating: number, index: number) => {
     const res = (rating - index) > 0 ? (rating - index) * 100 : 0
-    console.log("calculateOffset0", rating, index, res)
+    // console.log("calculateOffset0", rating, index, res)
     return res
 }
 
@@ -118,7 +118,7 @@ const calculateOffset1 = (rating: number, index: number) => {
     } else {
         res = 0
     }
-    console.log("calculateOffset1", rating, index, res)
+    // console.log("calculateOffset1", rating, index, res)
     return res
 }
 </script>

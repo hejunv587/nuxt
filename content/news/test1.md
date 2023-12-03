@@ -9,14 +9,14 @@ description: '一款采用全新检测方案，以实现高精度检测刹车油
 
 <h1 style="color: red; text-align: center; font-size: 2em; margin-bottom: 1em;">成为经销商</h1>
 <p style="line-height: 2; margin-bottom: 1em;">
-感谢您对成为FXFINE经销商的兴趣。作为一家摩托车工具品牌，FXFINE一直在寻找具有战略市场的强大经销商合作伙伴。
+感谢您对成为FXFINE福克菲经销商的兴趣。作为一家摩托车工具品牌，FXFINE福克菲一直在寻找具有战略市场的强大经销商合作伙伴。
 
-这一部分包含了更多关于成为经销商的信息，以便您了解更多。在您查看了所有的信息后，如果您或您的公司想要与FXFINE建立合作关系，并愿意迎接挑战并收获回报，那么请花几分钟时间填写信息表格。提交表格后，经销商销售代表将与您联系，向您提供更多关于成为经销商的细节，因此请留意联系方式。
+这一部分包含了更多关于成为经销商的信息，以便您了解更多。在您查看了所有的信息后，如果您或您的公司想要与FXFINE福克菲建立合作关系，并愿意迎接挑战并收获回报，那么请花几分钟时间填写信息表格。提交表格后，经销商销售代表将与您联系，向您提供更多关于成为经销商的细节，因此请留意联系方式。
 
-感谢您对FXFINE的信任和支持！
+感谢您对FXFINE福克菲的信任和支持！
 </p>
 
-<h1 style="color: red; text-align: center; font-size: 2em; margin-bottom: 1em;">为什么选择FXFINE？</h1>
+<h1 style="color: red; text-align: center; font-size: 2em; margin-bottom: 1em;">为什么选择FXFINE福克菲？</h1>
 <p style="line-height: 2; margin-bottom: 1em;">
 
 <div style="line-height: 2; margin-bottom: 1em;">
@@ -36,7 +36,7 @@ description: '一款采用全新检测方案，以实现高精度检测刹车油
 </ol>
 </div>
 
-<img style="display: block; margin-left: auto; margin-right: auto; width: 100%; margin-bottom: 1em;" src="/images/dearler2.jpg" alt="FXFINE成为经销商">
+<img style="display: block; margin-left: auto; margin-right: auto; width: 100%; margin-bottom: 1em;" src="/images/dearler2.jpg" alt="FXFINE福克菲成为经销商">
 
 #### 产品特点
 

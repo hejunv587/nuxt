@@ -4,7 +4,7 @@
       <h2 class="font-palanquin capitalize text-4xl lg:max-w-lg font-bold text-white">
         热门产品
       </h2>
-      <p class="mt-2 lg:max-w-lg font-montserrat text-[#b6b4b1] text-lg leading-7">FXFINE自主研发，推陈出新了众多品质卓越的产品</p>
+      <p class="mt-2 lg:max-w-lg font-montserrat text-[#b6b4b1] text-lg leading-7">FXFINE福克菲自主研发，推陈出新了众多品质卓越的产品</p>
     </div>
 
     <div class="w-full mt-4">

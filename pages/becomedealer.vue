@@ -42,20 +42,20 @@ const questions = [
         <section class="mx-auto container">
             <div class="container mx-auto md:px-6">
                 <div class="block">
-                    <img class="mx-auto py-4 w-full align-middle" :src="dearler1" alt="FXFINE成为经销商">
+                    <img class="mx-auto py-4 w-full align-middle" :src="dearler1" alt="FXFINE福克菲成为经销商">
                 </div>
                 <h2 class="mb-10 text-3xl font-bold text-[#bd4343] text-center mt-4">成为经销商</h2>
                 <div class="text-[#b6b4b1] leading-7 my-4">
-                    <p class="mb-4">感谢您对成为FXFINE经销商的兴趣。作为一家摩托车工具品牌，FXFINE一直在寻找具有战略市场的强大经销商合作伙伴。</p>
+                    <p class="mb-4">感谢您对成为FXFINE福克菲经销商的兴趣。作为一家摩托车工具品牌，FXFINE福克菲一直在寻找具有战略市场的强大经销商合作伙伴。</p>
 
                     <p class="mb-4">
-                        这一部分包含了更多关于成为经销商的信息，以便您了解更多。在您查看了所有的信息后，如果您或您的公司想要与FXFINE建立合作关系，并愿意迎接挑战并收获回报，那么请花几分钟时间填写信息表格。提交表格后，经销商销售代表将与您联系，向您提供更多关于成为经销商的细节，因此请留意联系方式。
+                        这一部分包含了更多关于成为经销商的信息，以便您了解更多。在您查看了所有的信息后，如果您或您的公司想要与FXFINE福克菲建立合作关系，并愿意迎接挑战并收获回报，那么请花几分钟时间填写信息表格。提交表格后，经销商销售代表将与您联系，向您提供更多关于成为经销商的细节，因此请留意联系方式。
                     </p>
 
-                    <p class="">感谢您对FXFINE的信任和支持！</p>
+                    <p class="">感谢您对FXFINE福克菲的信任和支持！</p>
 
                 </div>
-                <h2 class="mb-10 text-3xl font-bold text-[#bd4343] text-center mt-4">为什么选择FXFINE</h2>
+                <h2 class="mb-10 text-3xl font-bold text-[#bd4343] text-center mt-4">为什么选择FXFINE福克菲</h2>
                 <div class="grid md:grid-cols-3 grid-cols-1 leading-7 gap-4">
                     <div class="p-2">
                         <h3 class="text-white">1.独特的技术</h3>
@@ -77,7 +77,7 @@ const questions = [
                     </div>
                 </div>
                 <div class="block">
-                    <img class="mx-auto py-4 w-full align-middle" :src="dearler2" alt="FXFINE成为经销商">
+                    <img class="mx-auto py-4 w-full align-middle" :src="dearler2" alt="FXFINE福克菲成为经销商">
                 </div>
                 <h2 class="mb-10 text-3xl font-bold text-white text-center mt-4">常见问题解答</h2>
                 <div class="grid md:grid-cols-2 grid-cols-1 leading-7 gap-4">

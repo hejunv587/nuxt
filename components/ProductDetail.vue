@@ -41,13 +41,13 @@
                 <div ref="scrollContent">
                     <h2 class="text-4xl my-7 text-white">{{ product.name }}</h2>
                     <!-- <p class="text-xl my-7">Price - ${{ product.price }}</p> -->
-                    <h3 class="font-bold border-b-2 mb-4 pb-2 text-white">Product description:</h3>
+                    <h3 class="font-bold border-b-2 mb-4 pb-2 text-white">产品详情:</h3>
                     <p class="mb-7 text-[#b6b4b1]">{{ product.description }}</p>
 
-                    <h3 class="font-bold mb-4 pb-2 text-white">Product overview:</h3>
-                    <p class="mb-7 text-[#b6b4b1]">{{ product.overview }}</p>
+                    <h3 class="font-bold mb-4 pb-2 text-white" v-if="product.overview">产品概述:</h3>
+                    <p class="mb-7 text-[#b6b4b1]" v-if="product.overview">{{ product.overview }}</p>
 
-                    <h3 class="font-bold mb-4 pb-2 text-white">Product functions:</h3>
+                    <h3 class="font-bold mb-4 pb-2 text-white">产品功能:</h3>
                     <div class="mb-7">
                         <ul class="list-disc pl-5">
                             <li v-for="(item, index) in product.functions" :key="index" class="mb-2 text-[#b6b4b1]">{{ item
@@ -56,7 +56,7 @@
                         </ul>
                     </div>
 
-                    <h3 class="font-bold mb-4 pb-2 text-white">Product advantages:</h3>
+                    <h3 class="font-bold mb-4 pb-2 text-white">产品优势:</h3>
                     <div>
                         <ul class="list-disc pl-5">
                             <li v-for="(item, index) in product.advantages" :key="index" class="mb-2 text-[#b6b4b1]">{{ item
@@ -65,7 +65,7 @@
                         </ul>
                     </div>
 
-                    <h3 class="font-bold mb-4 pb-2 text-white mt-7">Technical Parameters:</h3>
+                    <h3 class="font-bold mb-4 pb-2 text-white mt-7">技术参数:</h3>
                     <div>
                         <ul class="list-disc pl-5">
                             <li v-for="(item, index) in product.technical_parameters" :key="index"
@@ -76,11 +76,11 @@
                     </div>
 
                     <div v-for="(item, index) in product.about" :key="index" class="mt-7">
-                        <h3 class="font-bold mb-4 pb-2 text-white">About {{ item.name }}:</h3>
+                        <h3 class="font-bold mb-4 pb-2 text-white">关于{{ item.name }}:</h3>
                         <p class="text-[#b6b4b1]">{{ item.desc }}</p>
                     </div>
 
-                    <h3 class="font-bold mb-4 pb-2 text-white mt-7">Services:</h3>
+                    <h3 class="font-bold mb-4 pb-2 text-white mt-7">服务:</h3>
                     <div>
                         <ul class="list-disc pl-5 mb-7">
                             <li v-for="(item, index) in product.services" :key="index" class="mb-2 text-[#b6b4b1]">
@@ -89,7 +89,7 @@
                         </ul>
                     </div>
 
-                    <h3 class="font-bold mb-4 pb-2 text-white mt-7">Why Choose FXFINE:</h3>
+                    <h3 class="font-bold mb-4 pb-2 text-white mt-7">为什么选择FXFINE福克菲:</h3>
                     <div>
                         <ul class="list-disc pl-5 mb-7">
                             <li v-for="(item, index) in product.whychoose" :key="index" class="mb-2 text-[#b6b4b1]">
@@ -98,7 +98,7 @@
                         </ul>
                     </div>
 
-                    <h3 class="font-bold mb-4 pb-2 text-white mt-7">Note:</h3>
+                    <h3 class="font-bold mb-4 pb-2 text-white mt-7">注意事项:</h3>
                     <div>
                         <ul class="list-disc pl-5 mb-7">
                             <li v-for="(item, index) in product.note" :key="index" class="mb-2 text-[#b6b4b1]">
@@ -111,7 +111,7 @@
         </div>
 
         <div ref="qa" class="my-7 mx-auto max-w-7xl pb-7 px-4">
-            <p class="text-white text-left font-extrabold text-xl">QUESTIONS & ANSWERS</p>
+            <p class="text-white text-left font-extrabold text-xl">常用问答</p>
             <div class="text-[#b6b4b1] mb-4">
                 <div class="my-4" v-for="(item, index) in paginatedQA">
                     <div class="mb-1">

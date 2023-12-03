@@ -46,7 +46,7 @@ const selectFeature = (feature) => {
                         <div style="text-shadow: none;">
 
 
-                            <p id="isPasted"><span>FXFINE
+                            <p id="isPasted"><span>
                                     FXFINE福克菲
                                     于2015年成立于中国深圳，一直专注于提供高品质的摩托车智能设备。我们立志成为摩托车智能与安全设备市场的中坚力量。我们的团队成员都有多年的汽车和摩托车智能与安全研发经验。凭借多年的行业经验，我们已成为摩托车爱好者和专业人士值得信赖的品牌。
 

@@ -5,7 +5,7 @@
             <div>
                 <NuxtLink to="/" class="font-bold">
                     <img class="m-0 w-[150px] max-w-full" :data-original-logo="logo" :data-alternate-logo="logo"
-                        :src="logo" alt="Fxfine">
+                        :src="logo" alt="Fxfine福克菲">
                 </NuxtLink>
             </div>
 
@@ -182,6 +182,10 @@ const menuList = [
     {
         name: '下载',
         path: '/downloads'
+    },
+    {
+        name: '成为经销商',
+        path: '/becomedealer'
     },
     // {
     //     name: '服务与支持',

@@ -73,9 +73,9 @@
 <script lang="ts" setup>
 import products from "~/assets/images/products.jpg"
 useHead({
-  title: 'FXFINE产品',
+  title: 'FXFINE福克菲产品',
   meta: [
-    { name: 'description', content: '所有FXFINE产品系列' }
+    { name: 'description', content: '所有FXFINE福克菲产品系列' }
   ]
 })
 
@@ -157,103 +157,40 @@ const seriesData = [
     description: '摩托车行车记录仪',
   },
   {
-    name: '汽车电路检测',
-    image: 'AutomotiveCircuitTesting.jpg',
-    serie: '汽车维修检测系列',
-    description: '描述汽车电路检测的信息',
+    id: 'MT001',
+    name: 'MT001',
+    image: 'MT001/1.jpg',
+    serie: '摩托车胎压监测系列',
+    description: 'MT001摩托车胎压监测仪，适用于摩托车、电动摩托车、电动自行车',
   },
   {
-    name: '汽车喷油嘴检测',
-    image: 'AutomotiveFuelInjectorInspection.jpg',
-    serie: '汽车维修检测系列',
-    description: '描述汽车喷油嘴检测的信息',
+    id: 'MT003',
+    name: 'MT003',
+    image: 'MT003/1.jpg',
+    serie: '摩托车行车记录仪系列',
+    description: 'MT003多功能摩托车智能车机，适用于摩托车、电动摩托车、电动自行车',
   },
   {
-    name: '汽车发动机压力检测',
-    image: 'CarEnginePressureDetection.jpg',
-    serie: '汽车维修检测系列',
-    description: '描述汽车发动机压力检测的信息',
+    id: 'MT004',
+    name: 'MT004',
+    image: 'MT004/1.jpg',
+    serie: '摩托车行车记录仪系列',
+    description: 'MT004多功能摩托车智能车机，适用于摩托车、电动摩托车、电动自行车',
   },
   {
-    name: '汽车油品检测',
-    image: 'AutomotiveOilTesting.jpg',
-    serie: '汽车维修检测系列',
-    description: '描述汽车油品检测的信息',
+    id: 'MT005',
+    name: 'MT005',
+    image: 'MT005/1.jpg',
+    serie: '摩托车行车记录仪系列',
+    description: 'MT005多功能摩托车智能车机，适用于摩托车、电动摩托车、电动自行车',
   },
   {
-    name: '汽车蓄电池检测',
-    image: 'CarBatteryTesting.jpg',
-    serie: '汽车维修检测系列',
-    description: '描述汽车蓄电池检测的信息',
+    id: 'MT005Carplay',
+    name: 'MT005Carplay',
+    image: 'MT005Carplay/1.jpg',
+    serie: '摩托车CarPlay系列',
+    description: 'MT005carplay多功能摩托车智能车机，适用于摩托车、电动摩托车、电动自行车',
   },
-  {
-    name: '汽车火花塞检测',
-    image: 'CarSparkPluginspection.jpg',
-    serie: '汽车维修检测系列',
-    description: '描述汽车火花塞检测的信息',
-  },
-  {
-    name: '汽车密闭空间检测',
-    image: 'CarConfinedSpaceInspection.jpg',
-    serie: '汽车维修检测系列',
-    description: '描述汽车密闭空间检测的信息',
-  },
-  {
-    name: '汽车底盘检测',
-    image: 'CarChassisInspection.jpg',
-    serie: '汽车维修检测系列',
-    description: '描述汽车底盘检测的信息',
-  },
-  {
-    name: '汽车刹车油更换',
-    serie: '汽车维修保养系列',
-    description: '描述汽车刹车油更换的信息',
-  },
-  {
-    name: '汽车发动机积碳清洗',
-    serie: '汽车维修保养系列',
-    description: '描述汽车发动机积碳清洗的信息',
-  },
-  {
-    name: '汽车冷媒维护保养',
-    serie: '汽车维修保养系列',
-    description: '描述汽车冷媒维护保养的信息',
-  },
-  {
-    name: '汽车蓄电池充电',
-    serie: '汽车维修保养系列',
-    description: '描述汽车蓄电池充电的信息',
-  },
-  {
-    name: '汽车编程稳压',
-    serie: '汽车维修保养系列',
-    description: '描述汽车编程稳压的信息',
-  },
-  {
-    name: '汽车自动变速箱油更换',
-    serie: '汽车维修保养系列',
-    description: '描述汽车自动变速箱油更换的信息',
-  },
-  {
-    name: '汽车废油回收',
-    serie: '汽车维修保养系列',
-    description: '描述汽车废油回收的信息',
-  },
-  {
-    name: '汽车燃油系统保养',
-    serie: '汽车维修保养系列',
-    description: '描述汽车燃油系统保养的信息',
-  },
-  {
-    name: '汽车冷却液更换',
-    serie: '汽车维修保养系列',
-    description: '描述汽车冷却液更换的信息',
-  },
-  {
-    name: '新能源汽车到电池检测',
-    serie: '新能源汽车维修工具系列',
-    description: '描述新能源汽车到电池检测的信息',
-  }
 ]
 
 const filteredSeries = computed(() => {

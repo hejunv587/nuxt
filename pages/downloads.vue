@@ -19,24 +19,24 @@
           <!-- Table Headings -->
           <thead>
             <tr>
-              <th class="py-2 px-4 border-b text-left w-[300px]" >标题</th>
+              <th class="py-2 px-4 border-b text-left w-[25%]">标题</th>
               <!-- <th class="py-2 px-4 border-b text-left">分类</th> -->
-              <th class="py-2 px-4 border-b text-left">文件格式</th>
-              <th class="py-2 px-4 border-b text-left">更新日期</th>
-              <th class="py-2 px-4 border-b text-left">操作</th>
+              <th class="py-2 px-4 border-b text-left w-[25%]">文件格式</th>
+              <th class="py-2 px-4 border-b text-left w-[25%]">更新日期</th>
+              <th class="py-2 px-4 border-b text-left w-[25%]">操作</th>
             </tr>
           </thead>
 
           <!-- Table Body -->
           <tbody>
             <tr v-for="(item, index) in filteredDownload" :key="index">
-              <td class="py-2 px-4 border-b">{{ item.title }}</td>
+              <td class="py-2 px-4 border-b"> <span class="block sm:inline">{{ item.title }}</span></td>
               <!-- <td class="py-2 px-4 border-b">{{ item.category }}</td> -->
               <td class="py-2 px-4 border-b">{{ item.fileType }}</td>
               <td class="py-2 px-4 border-b">{{ item.updatedAt }}</td>
               <td class="py-2 px-4 border-b">
                 <button @click="downloadItem(item)" class="text-blue-500 underline">下载</button>
-                <button @click="browseItem(item)" class="text-green-500 underline ml-2">浏览</button>
+                <button @click="browseItem(item)" class="text-green-500 underline md:ml-2">浏览</button>
               </td>
             </tr>
           </tbody>
@@ -65,9 +65,9 @@
     
 <script lang="ts" setup>
 useHead({
-  title: 'FXFINE下载',
+  title: 'FXFINE福克菲下载',
   meta: [
-    { name: 'description', content: '所有FXFINE下载' }
+    { name: 'description', content: '所有FXFINE福克菲下载' }
   ]
 })
 
