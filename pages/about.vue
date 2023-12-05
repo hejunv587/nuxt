@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import about_us from "~/assets/images/about_us.jpg"
-import factory from "~/assets/images/factory.jpg"
+import front_desk from "~/assets/images/front_desk.jpg"
 import inside_factory from "~/assets/images/inside_factory.jpg"
 import exhibition from "~/assets/images/exhibition.jpg"
 import office from "~/assets/images/office.jpg"
@@ -19,7 +19,7 @@ const features = [
 ];
 
 const images = [
-    { name: '工厂', src: factory },
+    { name: '公司前台', src: front_desk },
     { name: '工厂内部', src: inside_factory },
     { name: '展会', src: exhibition },
     { name: '办公室', src: office },

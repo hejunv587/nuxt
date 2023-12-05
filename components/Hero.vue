@@ -8,14 +8,17 @@ const carouselSlides = [
   {
     imageSrc: slide1,
     alt: "Slide 1",
+    link: "/products/MT005Carplay"
   },
   {
     imageSrc: slide2,
     alt: "Slide 2",
+    link: "/products/MT003"
   },
   {
     imageSrc: slide3,
     alt: "Slide 3",
+    link: "/products/MT001"
   },
   // Add more slide objects as needed
 ];
@@ -87,7 +90,9 @@ watch(
         :class="{
           'hidden': currentIndex !== index
         }" style="backface-visibility: hidden">
-        <img :src="slide.imageSrc" :alt="slide.alt" class="block w-full"  />
+        <a :href="slide.link">
+          <img :src="slide.imageSrc" :alt="slide.alt" class="block w-full"  />
+        </a>
         <!-- <div class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
           <h5 class="text-xl">First slide label</h5>
           <p>
