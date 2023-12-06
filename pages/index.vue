@@ -27,13 +27,16 @@ console.log("index page isIndex===>", isIndex)
             <Introduce1 />
         </section> -->
         <section class='mx-auto mt-4 container'>
-            <PopularProdcts />
+            <HotSelling />
         </section>
+        <!-- <section class='mx-auto mt-4 container'>
+            <PopularProdcts />
+        </section> -->
         <section class='mx-auto mt-4 container'>
             <Blogs />
         </section>
         <section class='mx-auto mt-4 container'>
-            <ContactForm/>
+            <ContactForm />
         </section>
     </main>
 </template>
