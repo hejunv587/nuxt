@@ -20,7 +20,7 @@
                         <div v-for="(image, index) in visibleThumbnails" :key="index">
                             <div class="cursor-pointer" @click="selectImage(index)"
                                 :class="{ 'border border-white': currentIndex === index }">
-                                <img :src="image.thumbnail" alt="Thumbnail" class="w-full h-auto" />
+                                <img :src="image.url" alt="Thumbnail" class="w-full h-auto" />
                             </div>
                         </div>
                     </div>
@@ -253,9 +253,10 @@ const {
 } = defineProps(['product'])
 
 const paginatedQA = computed(() => {
+    if (!product.qas) return [];
     const start = (currentPage.value - 1) * itemsPerPage;
     const end = start + itemsPerPage;
-    return product.qa.slice(start, end);
+    return product.qas.slice(start, end);
 });
 
 const reviews = ref([
@@ -355,7 +356,7 @@ avg.value = avg.value / totalReviews;
 
 
 
-const totalPages = computed(() => Math.ceil(product.qa.length / itemsPerPage));
+const totalPages = computed(() => Math.ceil(product.qas.length / itemsPerPage));
 
 const screenWidth = ref(0)
 const currentIndex = ref(0);
@@ -404,12 +405,12 @@ watch(gridColumns, () => {
 
 const res_src = ref()
 const res_thb = ref()
-res_src.value = product.images[currentIndex.value].src
+res_src.value = product.images[currentIndex.value].url
 res_thb.value = product.images[currentIndex.value].thumbnail
 
 const selectImage = (index: number) => {
     currentIndex.value = index;
-    res_src.value = product.images[currentIndex.value].src
+    res_src.value = product.images[currentIndex.value].url
 
 }
 

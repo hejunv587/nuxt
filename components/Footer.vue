@@ -41,7 +41,7 @@
                         class="rounded-full m-0" /> -->
                     <p>©2015-2023 FXFINE福克菲 版权所有</p>
                 </div>
-                <p class="font-montserrat cursor-pointer">粤ICP备2023138110号</p>
+                <p class="font-montserrat cursor-pointer"><a href="https://beian.miit.gov.cn"  target="_blank" >粤ICP备2023138110号</a></p>
             </div>
         </div>
     </footer>
@@ -62,18 +62,26 @@ const socialMedia = [
         alt: "抖音"
     }
 ]
-const footerLinks = [
+
+const { data: category } = await useFetch(`/api/category/`)
+// console.log(category.value)
+category.value.forEach(element => {
+    element.link = `/products#${element.id}`
+});
+
+const footerLinks = ref([
     {
         title: "产品",
-        links: [
-            { name: "摩托车行车记录仪系列", link: "/products#0" },
-            { name: "摩托车CarPlay系列", link: "/products#1" },
-            { name: "摩托车胎压监测系列", link: "/products#2" },
-            { name: "摩托车坡度仪系列", link: "/products#3" },
-            { name: "摩托车头盔系列", link: "/products#4" },
-            { name: "摩托车蓝牙耳机系列", link: "/products#5" },
+        // links: [
+        //     { name: "摩托车行车记录仪系列", link: "/products#0" },
+        //     { name: "摩托车CarPlay系列", link: "/products#1" },
+        //     { name: "摩托车胎压监测系列", link: "/products#2" },
+        //     { name: "摩托车坡度仪系列", link: "/products#3" },
+        //     { name: "摩托车头盔系列", link: "/products#4" },
+        //     { name: "摩托车蓝牙耳机系列", link: "/products#5" },
 
-        ],
+        // ],
+        links : category.value
     },
     // {
     //     "title": "汽车维修保养系列",
@@ -110,6 +118,14 @@ const footerLinks = [
 
         ],
     }
-]
+])
+
+// 使用 watchEffect 监听 category.value 的变化
+watchEffect(() => {
+    if (category.value) {
+        // 更新产品分类部分的 links
+        footerLinks.value[0].links = category.value;
+    }
+});
 </script>
   

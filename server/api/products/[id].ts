@@ -678,9 +678,12 @@ export default defineEventHandler(async (event) => {
 
   //   const { currencyKey } = useRuntimeConfig();
 
-  //   const uri = `https://api.currencyapi.com/v3/latest?currencies=${code}&apikey=${currencyKey}`;
+  const uri = `http://service.cnfxfine.com/product/${id}`;
 
-  const filteredProducts = products.filter((product) => product.id === id);
+  // const filteredProducts = products.filter((product) => product.id === id);
 
-  return filteredProducts[0];
+  // return filteredProducts[0];
+  const res = await $fetch(uri, { method: 'GET' });
+  const product = res.data;
+  return product;
 });
