@@ -5,7 +5,7 @@
             :class="{
                 'hidden': currentIndex !== index
             }" style="backface-visibility: hidden">
-            <img class="h-full w-full object-cover" :src="image" alt="">
+            <img class="h-full w-full object-cover" :src="image.url" alt="">
         </div>
 
         <!--Carousel controls - prev item-->

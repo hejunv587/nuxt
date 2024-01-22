@@ -193,18 +193,18 @@
                                     <img class="h-full w-full object-cover" :src="image" alt="">
                                 </div>
                             </div> -->
-                            <ReviewImage :images="item.image"></ReviewImage>
+                            <ReviewImage :images="item.images"></ReviewImage>
                         </div>
 
                         <Starts :rating="item.score" starSize="24" :name="item.name"></Starts>
                         <div class="p-2 space-y-2 h-full overflow-x-hidden select-none">
                             
-                                <div class="text-sm"> {{ item.name }} </div>
+                                <div class="text-sm"> {{ item.username }} </div>
                             
                             
                                 <div class="text-base overflow-y-auto  max-h-[200px]">
                                     <p>
-                                        {{ item.review }}
+                                        {{ item.content }}
                                     </p>
                                 </div>
 
@@ -222,7 +222,7 @@
 </template>
   
 <script setup lang="ts">
-import { Product } from '../types/product';
+import { Product,ProductReview } from '../types/product';
 // import BScroll from 'better-scroll';
 
 const scrollY = ref(0);
@@ -249,8 +249,10 @@ const prevPage = () => {
 // const { product } = defineProps(['product'])
 // const product: Product = defineProps(['product'])
 const {
-    product = undefined as Product | undefined
-} = defineProps(['product'])
+    product = undefined as Product | undefined,
+    reviews = undefined as ProductReview[] | undefined,
+} = defineProps(['product','reviews'])
+console.log("reviews",reviews)
 
 const paginatedQA = computed(() => {
     if (!product.qas) return [];
@@ -259,76 +261,76 @@ const paginatedQA = computed(() => {
     return product.qas.slice(start, end);
 });
 
-const reviews = ref([
-    {
-        "name": "赵六",
-        "score": 4,
-        "review": "产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。",
-        "email": "zhaoliu@example.com",
-        "image": ["https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/d320d14c2bdc487c8619aaa6472515af.jpeg", "https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/d2957d59d2b54d82937ec6c3f66424f6.jpeg",]
-    },
-    {
-        "name": "孙七",
-        "score": 5,
-        "review": "非常好的购物体验，产品质量上乘。",
-        "email": "sunqi@example.com",
-        "image": ["https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/eec8aeaa51854a1fa8c68ced1e62c988.jpeg"]
-    },
-    {
-        "name": "周八",
-        "score": 3,
-        "review": "产品还不错，但是物流有些慢。",
-        "email": "zhouba@example.com",
-        "image": ["https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/cd32072d15714b748c0a9199e6042725.jpeg"]
-    },
-    {
-        "name": "吴九",
-        "score": 4,
-        "review": "服务态度很好，产品也很满意。",
-        "email": "wujui@example.com",
-        "image": ["https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/fae8d8a02490420b811893bed3498a6a.jpeg"]
+// const reviews = ref([
+//     {
+//         "name": "赵六",
+//         "score": 4,
+//         "review": "产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。产品非常实用，我很喜欢。",
+//         "email": "zhaoliu@example.com",
+//         "image": ["https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/d320d14c2bdc487c8619aaa6472515af.jpeg", "https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/d2957d59d2b54d82937ec6c3f66424f6.jpeg",]
+//     },
+//     {
+//         "name": "孙七",
+//         "score": 5,
+//         "review": "非常好的购物体验，产品质量上乘。",
+//         "email": "sunqi@example.com",
+//         "image": ["https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/eec8aeaa51854a1fa8c68ced1e62c988.jpeg"]
+//     },
+//     {
+//         "name": "周八",
+//         "score": 3,
+//         "review": "产品还不错，但是物流有些慢。",
+//         "email": "zhouba@example.com",
+//         "image": ["https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/cd32072d15714b748c0a9199e6042725.jpeg"]
+//     },
+//     {
+//         "name": "吴九",
+//         "score": 4,
+//         "review": "服务态度很好，产品也很满意。",
+//         "email": "wujui@example.com",
+//         "image": ["https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/fae8d8a02490420b811893bed3498a6a.jpeg"]
 
-    },
-    {
-        "name": "郑十",
-        "score": 5,
-        "review": "下次还会再来，推荐给朋友了。",
-        "email": "zhengshi@example.com",
-        "image": ["https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/08588eaa59aa41fcaf1989f658413189.jpeg"]
+//     },
+//     {
+//         "name": "郑十",
+//         "score": 5,
+//         "review": "下次还会再来，推荐给朋友了。",
+//         "email": "zhengshi@example.com",
+//         "image": ["https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/08588eaa59aa41fcaf1989f658413189.jpeg"]
 
-    },
-    {
-        "name": "王十一",
-        "score": 4,
-        "review": "产品质量很好，下次还会再买。",
-        "email": "wangshiyi@example.com",
-        "image": ["https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/e133d0c682ce45a398a762a56d04a534.jpeg"]
-    },
-    {
-        "name": "李十二",
-        "score": 5,
-        "review": "非常满意，服务也很好。",
-        "email": "lishier@example.com"
-    },
-    {
-        "name": "张十三",
-        "score": 4,
-        "review": "产品很好，物流也很快。",
-        "email": "zhangshisan@example.com"
-    },
-    {
-        "name": "赵十四",
-        "score": 5,
-        "review": "非常满意，产品质量很好。",
-        "email": "zhaoshisi@example.com"
-    },
-    {
-        "name": "孙十五",
-        "score": 4,
-        "review": "产品很实用，我很喜欢。",
-        "email": "sunshiwu@example.com"
-    }
-])
+//     },
+//     {
+//         "name": "王十一",
+//         "score": 4,
+//         "review": "产品质量很好，下次还会再买。",
+//         "email": "wangshiyi@example.com",
+//         "image": ["https://reviews.am-usercontent.com/images/u/o/fe7f1d45cd55be947962814c0c85676e6a77187c/review-images/e133d0c682ce45a398a762a56d04a534.jpeg"]
+//     },
+//     {
+//         "name": "李十二",
+//         "score": 5,
+//         "review": "非常满意，服务也很好。",
+//         "email": "lishier@example.com"
+//     },
+//     {
+//         "name": "张十三",
+//         "score": 4,
+//         "review": "产品很好，物流也很快。",
+//         "email": "zhangshisan@example.com"
+//     },
+//     {
+//         "name": "赵十四",
+//         "score": 5,
+//         "review": "非常满意，产品质量很好。",
+//         "email": "zhaoshisi@example.com"
+//     },
+//     {
+//         "name": "孙十五",
+//         "score": 4,
+//         "review": "产品很实用，我很喜欢。",
+//         "email": "sunshiwu@example.com"
+//     }
+// ])
 
 
 let scores = [
@@ -338,10 +340,12 @@ let scores = [
     { key: 2, value: 0 },
     { key: 1, value: 0 }
 ]
-let totalReviews = reviews.value.length;
+let totalReviews = reviews.length;
+// let totalReviews = 1;
 let avg = ref(0);
 
-for (let review of reviews.value) {
+// for (let review of reviews.value) {
+for (let review of reviews) {
     let score = review.score; // 假设每个评价对象都有一个名为`score`的属性来存储评价的分数
     avg.value += review.score
     for (let scoreObj of scores) {
