@@ -97,6 +97,7 @@
 
 <script lang="ts" setup>
 import logo from "~/assets/images/logo.png"
+// import logo from "~/assets/images/logo.jpg"
 const isMobileMenuOpen = ref(false);
 const isSubMenuOpen = ref(false);
 
